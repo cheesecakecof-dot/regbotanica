@@ -1,0 +1,3348 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Биология: Большой конспект (Часть 1)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Кофейно-пастельная палитра */
+            --bg-main: #fcf9f5;
+            --bg-card: #f4ebe2;
+            --bg-sidebar: #e8dbcd;
+            --text-main: #4a3b32;
+            --text-muted: #7a6558;
+            --accent-coffee: #a67c63;
+            --accent-light: #d4b8a5;
+            --accent-green: #9cb39a;
+            --accent-blue: #9cafc4;
+            --accent-pink: #d4a5a5;
+            --border-radius: 16px;
+            --shadow: 0 10px 30px rgba(166, 124, 99, 0.1);
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Lora', serif;
+            color: var(--accent-coffee);
+            font-weight: 600;
+        }
+
+        /* Контейнеры */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header-title {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--bg-card), var(--bg-main));
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--accent-light);
+        }
+
+        .header-title h1 {
+            font-size: 3em;
+            margin: 0 0 10px 0;
+            letter-spacing: 2px;
+        }
+
+        .header-title p {
+            color: var(--text-muted);
+            font-size: 1.2em;
+            margin: 0;
+        }
+
+        /* Сетка и карточки */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .grid-equal {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            border-left: 6px solid var(--accent-coffee);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            border-bottom: 2px dashed var(--accent-light);
+            padding-bottom: 10px;
+        }
+
+        .card h3 {
+            color: var(--text-main);
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        /* Боковые панели (Простыми словами) */
+        .sidebar {
+            background-color: var(--bg-sidebar);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: inset 0 0 15px rgba(255,255,255,0.5), var(--shadow);
+            border: 1px solid #d8c5b6;
+            position: relative;
+            height: fit-content;
+        }
+
+        .sidebar::before {
+            content: "💡";
+            font-size: 2em;
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: var(--bg-main);
+            padding: 0 10px;
+            border-radius: 50%;
+            box-shadow: var(--shadow);
+        }
+
+        .sidebar h4 {
+            margin-top: 10px;
+            color: #8c624a;
+            font-size: 1.2em;
+        }
+
+        .sidebar p {
+            font-size: 0.95em;
+            color: #5a493f;
+        }
+
+        /* Таблицы */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        th, td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--bg-card);
+        }
+
+        th {
+            background-color: var(--bg-card);
+            color: var(--accent-coffee);
+            font-family: 'Lora', serif;
+            font-weight: 600;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background-color: #faf8f6;
+        }
+
+        /* Схемы и визуализации */
+        .schema-box {
+            background: var(--bg-main);
+            border: 2px dashed var(--accent-light);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+            font-family: monospace;
+            color: var(--text-muted);
+            overflow-x: auto;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #fcebe2 0%, #fcebe2 100%);
+            padding: 0 5px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #b05a3a;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 600;
+            margin-right: 5px;
+            color: #fff;
+        }
+        .badge-green { background-color: var(--accent-green); }
+        .badge-blue { background-color: var(--accent-blue); }
+        .badge-pink { background-color: var(--accent-pink); }
+        .badge-coffee { background-color: var(--accent-coffee); }
+
+        /* Анимация появления */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        /* Стили для формул */
+        .formula {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-coffee);
+            font-family: 'Lora', serif;
+            font-style: italic;
+            text-align: center;
+            font-size: 1.2em;
+            margin: 15px 0;
+        }
+
+        /* Оглавление */
+        .toc {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+        }
+        .toc h2 {
+            margin-top: 0;
+            text-align: center;
+        }
+        .toc ul {
+            list-style-type: none;
+            padding: 0;
+            columns: 2;
+            column-gap: 40px;
+        }
+        .toc li {
+            margin-bottom: 10px;
+        }
+        .toc a {
+            color: var(--text-main);
+            text-decoration: none;
+            transition: color 0.3s;
+            display: block;
+            padding: 5px 10px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.5);
+        }
+        .toc a:hover {
+            color: var(--accent-coffee);
+            background: #fff;
+            padding-left: 15px;
+        }
+
+        .divider {
+            text-align: center;
+            font-size: 2em;
+            color: var(--accent-light);
+            margin: 40px 0;
+            letter-spacing: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2, .grid-equal {
+                grid-template-columns: 1fr;
+            }
+            .toc ul {
+                columns: 1;
+            }
+            .header-title h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header class="header-title animate">
+        <h1>Биология: Полный курс</h1>
+        <p>Конспекты, схемы и разбор сложных тем в кофейно-пастельных тонах</p>
+        <p style="font-size: 0.9em; margin-top: 15px;">Часть 1: Молекулярная биология, Генетика, Прокариоты, Вирусы</p>
+    </header>
+
+    <nav class="toc animate">
+        <h2>Оглавление</h2>
+        <ul>
+            <li><a href="#dna">1. ДНК, Хромосомы и Гены</a></li>
+            <li><a href="#mitosis">2. Клеточный цикл и Митоз</a></li>
+            <li><a href="#meiosis">3. Мейоз: основы размножения</a></li>
+            <li><a href="#prokaryotes">4. Прокариоты (Бактерии)</a></li>
+            <li><a href="#eukaryotes">5. Прокариоты vs Эукариоты vs Археи</a></li>
+            <li><a href="#plant-cell">6. Растительная клетка</a></li>
+            <li><a href="#viruses">7. Вирусы и ВИЧ</a></li>
+            <li><a href="#metabolism">8. Брожение и Дыхание</a></li>
+            <li><a href="#chemosynthesis">9. Хемосинтез</a></li>
+        </ul>
+    </nav>
+
+    <!-- СЕКЦИЯ 1: ДНК -->
+    <section id="dna" class="animate">
+        <div class="grid-2">
+            <div class="card">
+                <h2>1. Наследственность, ДНК и Хромосомы</h2>
+                <p><strong>Наследственность</strong> — это присущее всем организмам свойство повторять в ряду поколений одинаковые признаки и особенности развития. Обусловлено передачей материальных структур клетки.</p>
+                
+                <h3>Строение ДНК</h3>
+                <p><strong>ДНК (Дезоксирибонуклеиновая кислота)</strong> — макромолекула, обеспечивающая хранение, передачу и реализацию генетической программы.</p>
+                <ul>
+                    <li>Состоит из <strong>нуклеотидов</strong>.</li>
+                    <li>Нуклеотид = Азотистое основание + Дезоксирибоза (сахар) + Остаток фосфорной кислоты.</li>
+                    <li>ДНК — это двойная спираль (две цепочки).</li>
+                </ul>
+
+                <div class="formula">
+                    Принцип комплементарности:<br>
+                    А (Аденин) = Т (Тимин)<br>
+                    Г (Гуанин) ≡ Ц (Цитозин)
+                </div>
+
+                <h3>Хромосомы</h3>
+                <p>Общая длина ДНК в одной клетке человека около 2 метров. Чтобы она поместилась в ядре, ДНК плотно упаковывается с помощью белков-<strong>гистонов</strong> в хромосомы.</p>
+                <p><strong>Хроматин</strong> — вещество хромосом в интерфазе (раскрученное). В начале деления хроматин спирализуется и образует видимые хромосомы.</p>
+                
+                <h3>Наборы хромосом</h3>
+                <p>Гаплоидный набор — <span class="highlight">n</span>, набор молекул ДНК (хроматид) — <span class="highlight">c</span>. Диплоидный — <strong>2n2c</strong>.</p>
+                <p><strong>Гомологичные хромосомы</strong> — одинаковые по форме, строению и генам (одна от мамы, одна от папы).</p>
+            </div>
+            
+            <aside class="sidebar">
+                <h4>Простыми словами: Хроматида и Хромосома</h4>
+                <p>Запомни главное правило: <strong>1 хроматида = 1 молекула ДНК. Всегда!</strong></p>
+                <p>До репликации (удвоения) хромосома выглядит как палочка (1 хроматида, 1 ДНК).</p>
+                <p>После репликации хромосома похожа на букву <strong>Х</strong> — она состоит из двух сестринских хроматид (2 молекулы ДНК). Но с точки зрения генетики — это всё еще <strong>ОДНА</strong> хромосома, так как у них общая центромера!</p>
+            </aside>
+        </div>
+    </section>
+
+    <div class="divider">❦ ❦ ❦</div>
+
+    <!-- СЕКЦИЯ 2: МИТОЗ -->
+    <section id="mitosis" class="animate">
+        <div class="grid-2">
+            <div class="card">
+                <h2>2. Клеточный цикл и Митоз</h2>
+                <p><strong>Клеточный цикл</strong> — период от образования клетки до ее деления или гибели.</p>
+                
+                <h3>Интерфаза (подготовка)</h3>
+                <ul>
+                    <li><strong>G1 (пресинтетический):</strong> Рост клетки, накопление веществ.</li>
+                    <li><strong>S (синтетический):</strong> <span class="highlight">Репликация ДНК</span>, удвоение центриолей.</li>
+                    <li><strong>G2 (постсинтетический):</strong> Синтез белков, накопление энергии АТФ.</li>
+                </ul>
+
+                <h3>Фазы Митоза</h3>
+                <p>Митоз — непрямое деление соматических клеток, при котором образуются 2 клетки с идентичным набором хромосом.</p>
+                <table>
+                    <tr>
+                        <th>Фаза</th>
+                        <th>Что происходит</th>
+                        <th>Набор</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Профаза</strong></td>
+                        <td>Спирализация хроматина, исчезновение ядрышек, распад ядерной оболочки, центриоли расходятся к полюсам, образуется веретено деления.</td>
+                        <td>2n4c</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Метафаза</strong></td>
+                        <td>Хромосомы выстраиваются по экватору (метафазная пластинка). Нити веретена прикреплены к центромерам.</td>
+                        <td>2n4c</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Анафаза</strong></td>
+                        <td>Центромеры делятся, сестринские хроматиды (теперь — дочерние хромосомы) расходятся к полюсам.</td>
+                        <td>4n4c (в клетке)<br>2n2c (у полюсов)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Телофаза</strong></td>
+                        <td>Деспирализация хромосом, образование ядерных оболочек, цитокинез (разделение цитоплазмы).</td>
+                        <td>2n2c (в каждой)</td>
+                    </tr>
+                </table>
+                
+                <h3>Значение митоза</h3>
+                <ul>
+                    <li>Точное распределение генетического материала.</li>
+                    <li>Эмбриональное развитие, рост, регенерация тканей.</li>
+                    <li>Бесполое размножение (почкование гидры, вегетативное размножение растений).</li>
+                </ul>
+            </div>
+            
+            <aside class="sidebar">
+                <h4>Как запомнить фазы?</h4>
+                <p>Фраза для запоминания: <strong>«ПРОфессор МЕТнул АНАнас в ТЕЛефон»</strong></p>
+                <p><strong>ПРО</strong>фаза → <strong>МЕТ</strong>афаза → <strong>АНА</strong>фаза → <strong>ТЕЛ</strong>офаза.</p>
+                <hr style="border: 1px dashed var(--accent-light); margin: 15px 0;">
+                <h4>Наборы n и c</h4>
+                <p>Где <strong>n</strong> — количество хромосом, <strong>c</strong> — количество ДНК (хроматид).</p>
+                <p>В анафазе митоза хроматиды разъехались, поэтому в клетке временно 4n4c, но как только клетка поделится, станет 2n2c.</p>
+            </aside>
+        </div>
+    </section>
+
+    <div class="divider">❦ ❦ ❦</div>
+
+    <!-- СЕКЦИЯ 3: МЕЙОЗ -->
+    <section id="meiosis" class="animate">
+        <div class="grid-2">
+            <div class="card">
+                <h2>3. Мейоз</h2>
+                <p><strong>Мейоз</strong> — особый способ деления эукариотических клеток, в результате которого из одной материнской образуются 4 дочерние с уменьшенным в 2 раза (гаплоидным) набором хромосом.</p>
+                <p>Состоит из двух последовательных делений: Мейоз I (редукционное) и Мейоз II (эквационное). Репликация ДНК происходит только перед Мейозом I.</p>
+
+                <h3>Мейоз I (Редукционное деление)</h3>
+                <ul>
+                    <li><strong>Профаза I:</strong> Самая важная стадия. Происходит <span class="highlight">конъюгация</span> (сближение гомологичных хромосом) и <span class="highlight">кроссинговер</span> (обмен участками). Образуются биваленты (тетрады).</li>
+                    <li><strong>Метафаза I:</strong> Биваленты по экватору. К центромерам прикреплены нити от разных полюсов.</li>
+                    <li><strong>Анафаза I:</strong> Целые гомологичные хромосомы (состоящие из двух хроматид) расходятся к полюсам. <em>Центромеры не делятся!</em></li>
+                    <li><strong>Телофаза I:</strong> Образуются 2 клетки с набором <strong>1n2c</strong>.</li>
+                </ul>
+
+                <h3>Мейоз II (похож на митоз)</h3>
+                <ul>
+                    <li>Проходит без репликации ДНК.</li>
+                    <li><strong>Анафаза II:</strong> Центромеры делятся, сестринские хроматиды расходятся.</li>
+                    <li><strong>Телофаза II:</strong> Образуются 4 клетки с набором <strong>1n1c</strong>.</li>
+                </ul>
+
+                <h3>Значение мейоза</h3>
+                <ol>
+                    <li>Поддержание постоянного диплоидного набора хромосом при половом размножении.</li>
+                    <li>Основа комбинативной изменчивости (за счет кроссинговера в профазе I и независимого расхождения хромосом в анафазе I).</li>
+                </ol>
+            </div>
+            
+            <aside class="sidebar">
+                <h4>Что такое Кроссинговер?</h4>
+                <p>Представь две гомологичные хромосомы (одна от мамы, другая от папы). Они сближаются (конъюгация) и могут обменяться одинаковыми участками. </p>
+                <p>В результате образуются <strong>кроссоверные хромосомы</strong> — они содержат гены и от мамы, и от папы. Это создает генетическое разнообразие потомства!</p>
+            </aside>
+        </div>
+    </section>
+
+    <div class="divider">❦ ❦ ❦</div>
+
+    <!-- СЕКЦИЯ 4: ПРОКАРИОТЫ -->
+    <section id="prokaryotes" class="animate">
+        <div class="grid-2">
+            <div class="card">
+                <h2>4. Прокариоты (Бактерии и Археи)</h2>
+                <p>Прокариоты — одноклеточные организмы, не имеющие оформленного ядра.</p>
+                
+                <h3>Строение бактериальной клетки</h3>
+                <ul>
+                    <li><strong>Нуклеоид:</strong> Кольцевая молекула ДНК, не связанная с белками.</li>
+                    <li><strong>Плазмиды:</strong> Маленькие кольцевые ДНК, дающие преимущества (например, устойчивость к антибиотикам).</li>
+                    <li><strong>Клеточная стенка:</strong> Состоит из муреина (пептидогликана).</li>
+                    <li><strong>Капсула:</strong> Слизистый слой поверх стенки (защита).</li>
+                    <li><strong>Жгутики:</strong> Для движения (состоят из белка флагеллина).</li>
+                    <li><strong>Пили (фимбрии):</strong> Для прикрепления и обмена генами (конъюгации).</li>
+                    <li><strong>Рибосомы:</strong> 70S (мельче, чем у эукариот).</li>
+                </ul>
+
+                <h3>Окраска по Граму</h3>
+                <p>Метод деления бактерий на две группы по строению стенки:</p>
+                <ul>
+                    <li><span class="badge badge-pink">Грамположительные (+)</span> Толстый слой муреина. Окрашиваются в <strong>фиолетовый</strong> цвет.</li>
+                    <li><span class="badge badge-coffee">Грамотрицательные (-)</span> Тонкий слой муреина, но есть внешняя мембрана. При окраске теряют фиолетовый краситель и становятся <strong>розовыми/красными</strong>.</li>
+                </ul>
+            </div>
+            
+            <aside class="sidebar">
+                <h4>Формы бактерий</h4>
+                <p>🔵 <strong>Кокки</strong> (шаровидные): диплококки, стрептококки (цепочки), стафилококки (гроздья).</p>
+                <p>🦠 <strong>Бациллы</strong> (палочки).</p>
+                <p>🌀 <strong>Извитые:</strong> вибрионы (запятая), спириллы, спирохеты.</p>
+            </aside>
+        </div>
+    </section>
+
+    <div class="divider">❦ ❦ ❦</div>
+
+    <!-- СЕКЦИЯ 5: СРАВНЕНИЕ -->
+    <section id="eukaryotes" class="animate">
+        <div class="card">
+            <h2>5. Сравнение: Бактерии, Археи и Эукариоты</h2>
+            <table>
+                <tr>
+                    <th>Признак</th>
+                    <th>Бактерии</th>
+                    <th>Археи</th>
+                    <th>Эукариоты</th>
+                </tr>
+                <tr>
+                    <td><strong>Ядро</strong></td>
+                    <td>Нет (нуклеоид)</td>
+                    <td>Нет (нуклеоид)</td>
+                    <td>Есть (хромосомы)</td>
+                </tr>
+                <tr>
+                    <td><strong>Рибосомы</strong></td>
+                    <td>70S</td>
+                    <td>70S (смешанные черты)</td>
+                    <td>80S</td>
+                </tr>
+                <tr>
+                    <td><strong>Клеточная стенка</strong></td>
+                    <td>Муреин (пептидогликан)</td>
+                    <td>Псевдомуреин / S-слой / нет</td>
+                    <td>Целлюлоза (растения), Хитин (грибы), нет (животные)</td>
+                </tr>
+                <tr>
+                    <td><strong>Мембранные органоиды</strong></td>
+                    <td>Нет</td>
+                    <td>Нет</td>
+                    <td>Есть (митохондрии, ЭПС, Гольджи и др.)</td>
+                </tr>
+                <tr>
+                    <td><strong>Липиды мембраны</strong></td>
+                    <td>Сложноэфирные связи</td>
+                    <td>Простая эфирная связь</td>
+                    <td>Сложноэфирные связи</td>
+                </tr>
+                <tr>
+                    <td><strong>ДНК</strong></td>
+                    <td>Кольцевая</td>
+                    <td>Кольцевая</td>
+                    <td>Линейная</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <div class="divider">❦ ❦ ❦</div>
+
+    <!-- СЕКЦИЯ 6: РАСТИТЕЛЬНАЯ КЛЕТКА -->
+    <section id="plant-cell" class="animate">
+        <div class="grid-2">
+            <div class="card">
+                <h2>6. Растительная клетка</h2>
+                <p>Соматическая растительная клетка окружена клеточной стенкой из <strong>целлюлозы</strong>. Живое содержимое — <strong>протопласт</strong>.</p>
+                
+                <h3>Главные органоиды</h3>
+                <ul>
+                    <li><strong>Вакуоль:</strong> Крупная, занимает центральную часть. Заполнена клеточным соком. Регулирует тургор (давление) и запасает вещества.</li>
+                    <li><strong>Пластиды (двумембранные):</strong>
+                        <ul>
+                            <li><em>Хлоропласты</em> (зеленые, фотосинтез, содержат тилакоиды и граны).</li>
+                            <li><em>Хромопласты</em> (желтые/красные/оранжевые, привлекают опылителей).</li>
+                            <li><em>Лейкопласты</em> (бесцветные, запасают крахмал).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Митохондрии:</strong> Энергетические станции (кристы, матрикс).</li>
+                    <li><strong>ЭПС:</strong> Шероховатая (с рибосомами, синтез белка) и гладкая (синтез липидов).</li>
+                    <li><strong>Аппарат Гольджи:</strong> Синтез полисахаридов, формирование клеточной стенки.</li>
+                    <li><strong>Лизосомы, пероксисомы, сферосомы (олеосомы).</strong></li>
+                </ul>
+            </div>
+            
+            <aside class="sidebar">
+                <h4>Эргастические вещества</h4>
+                <p>Это непостоянные включения в клетке (продукты жизнедеятельности):</p>
+                <p>Крахмальные зерна, капли жира (липиды), алейроновые зерна (белки), кристаллы оксалата кальция в вакуолях.</p>
+            </aside>
+        </div>
+    </section>
+
+    <div class="divider">❦ ❦ ❦</div>
+
+    <!-- СЕКЦИЯ 7: ВИРУСЫ -->
+    <section id="viruses" class="animate">
+        <div class="grid-2">
+            <div class="card">
+                <h2>7. Вирусы</h2>
+                <p>Вирусы открыты в 1892 г. Д.И. Ивановским (мозаичная болезнь табака).</p>
+                <p><strong>Характеристика:</strong></p>
+                <ul>
+                    <li>Не имеют клеточного строения.</li>
+                    <li>Содержат только один тип нуклеиновой кислоты (ДНК или РНК).</li>
+                    <li>Не имеют собственного метаболизма.</li>
+                    <li>Ультрапаразиты (паразитируют внутри клеток).</li>
+                    <li>Размеры: 10 – 300 нм.</li>
+                </ul>
+
+                <h3>Строение вириона (вне клетки)</h3>
+                <ol>
+                    <li><strong>Сердцевина:</strong> Генетический материал (ДНК/РНК).</li>
+                    <li><strong>Капсид:</strong> Белковая оболочка (защита + рецепторы).</li>
+                    <li><strong>Суперкапсид:</strong> Дополнительная липопротеидная мембрана (у сложных вирусов, например, ВИЧ, грипп). Возникает из мембраны клетки-хозяина.</li>
+                </ol>
+
+                <h3>Жизненный цикл вируса</h3>
+                <ol>
+                    <li><strong>Осаждение (адсорбция):</strong> Прикрепление к мембране за счет комплементарности рецепторов.</li>
+                    <li><strong>Проникновение:</strong> Эндоцитоз или слияние мембран.</li>
+                    <li><strong>Разрушение оболочек:</strong> Освобождение нуклеиновой кислоты.</li>
+                    <li><strong>Репликация и синтез белков:</strong> Вирус подавляет синтез ДНК/РНК клетки и использует ее ферменты для создания своих копий.</li>
+                    <li><strong>Сборка и выход:</strong> Новые вирионы собираются и выходят (часто почкованием), забирая часть мембраны (суперкапсид).</li>
+                </ol>
+
+                <h3>ВИЧ (Вирус иммунодефицита человека)</h3>
+                <p>Относится к <strong>ретровирусам</strong> (РНК-геномный). Имеет фермент <span class="highlight">обратную транскриптазу</span> (синтезирует ДНК с РНК).</p>
+                <p>Клетки-мишени: CD4-лимфоциты (хелперы).</p>
+            </div>
+            
+            <aside class="sidebar">
+                <h4>Бактериофаги</h4>
+                <p>Вирусы, паразитирующие в бактериях. Похожи на робота-паука. Имеют головку (с ДНК), хвостик и хвостовые отростки. Впрыскивают свою ДНК в бактерию.</p>
+            </aside>
+        </div>
+    </section>
+
+    <div class="divider">❦ ❦ ❦</div>
+
+    <!-- СЕКЦИЯ 8: МЕТАБОЛИЗМ -->
+    <section id="metabolism" class="animate">
+        <div class="grid-2">
+            <div class="card">
+                <h2>8. Брожение и Дыхание</h2>
+                <p>Два основных пути получения энергии при окислении органических веществ.</p>
+                
+                <h3>Брожение</h3>
+                <ul>
+                    <li>Строго анаэробный процесс.</li>
+                    <li>Внешний акцептор электронов отсутствует (единственный переносчик — НАДН).</li>
+                    <li>Начинается с гликолиза (образуется 2 АТФ).</li>
+                </ul>
+                <table>
+                    <tr>
+                        <th>Тип брожения</th>
+                        <th>Продукты</th>
+                        <th>АТФ</th>
+                    </tr>
+                    <tr>
+                        <td>Молочнокислое</td>
+                        <td>Молочная кислота</td>
+                        <td>2 АТФ</td>
+                    </tr>
+                    <tr>
+                        <td>Спиртовое (дрожжи)</td>
+                        <td>Этанол + CO2</td>
+                        <td>2 АТФ</td>
+                    </tr>
+                    <tr>
+                        <td>Смешанное (кишечная палочка)</td>
+                        <td>Муравьиная, CO2, H2, спирты</td>
+                        <td>2,5 АТФ</td>
+                    </tr>
+                    <tr>
+                        <td>Пропионовокислое</td>
+                        <td>Пропионовая, CO2, ацетат</td>
+                        <td>2,7 АТФ</td>
+                    </tr>
+                    <tr>
+                        <td>Маслянокислое (клостридии)</td>
+                        <td>Масляная кислота, спирты, H2</td>
+                        <td>3,3 АТФ</td>
+                    </tr>
+                </table>
+
+                <h3>Дыхание</h3>
+                <ul>
+                    <li>Может быть аэробным и анаэробным.</li>
+                    <li>Обязательно присутствует <strong>внешний акцептор электронов</strong> (кислород, нитраты, сульфаты и др.) и цепь переносчиков (ЭТЦ).</li>
+                    <li>Этапы: Гликолиз → Окислительное декарбоксилирование ПВК (ацетил-КоА) → Цикл Кребса → ЭТЦ.</li>
+                    <li>Аэробное дыхание дает максимум энергии: <span class="highlight">32 молекулы АТФ</span>.</li>
+                </ul>
+            </div>
+            
+            <aside class="sidebar">
+                <h4>Анаэробное дыхание</h4>
+                <p>Если нет кислорода, бактерии могут "дышать" другими веществами:</p>
+                <p>Нитратредукция (нитрат → нитрит).</p>
+                <p>Денитрификация (нитрат → N2).</p>
+                <p>Сульфатредукция (сульфат → сероводород).</p>
+            </aside>
+        </div>
+    </section>
+
+    <div class="divider">❦ ❦ ❦</div>
+
+    <!-- СЕКЦИЯ 9: ХЕМОСИНТЕЗ -->
+    <section id="chemosynthesis" class="animate">
+        <div class="grid-2">
+            <div class="card">
+                <h2>9. Хемосинтез</h2>
+                <p>Процесс синтеза органики из CO2 за счет энергии окисления неорганических веществ. Открыт С.Н. Виноградским.</p>
+                <p>Свойственен только прокариотам.</p>
+                
+                <h3>Ключевые особенности</h3>
+                <ul>
+                    <li>Донором электронов выступают неорганические вещества (H2S, NH3, Fe2+, H2).</li>
+                    <li><strong>Обратный транспорт электронов:</strong> Хемосинтетики тратят энергию (АТФ), чтобы "загнать" электроны с терминального акцептора обратно на НАД+ для синтеза НАДН, необходимого для цикла Кальвина.</li>
+                    <li><strong>Разорванный цикл Кребса:</strong> Из-за нехватки органики цикл не идет полностью, чтобы не сжигать слишком много углерода.</li>
+                </ul>
+
+                <h3>Группы бактерий</h3>
+                <ul>
+                    <li><strong>Нитрифицирующие:</strong> Окисляют аммиак до нитритов, затем до нитратов.</li>
+                    <li><strong>Серобактерии (тионовые):</strong> Окисляют H2S до серы и серной кислоты.</li>
+                    <li><strong>Железобактерии:</strong> Окисляют Fe2+ до Fe3+.</li>
+                    <li><strong>Водородные бактерии:</strong> Окисляют H2.</li>
+                </ul>
+            </div>
+            
+            <aside class="sidebar">
+                <h4>Роль в природе</h4>
+                <p>Хемосинтетики — <strong>первичные продуценты</strong>. Они создают органику там, где нет света (в глубинах океана у "черных курильщиков", в почве). Они участвуют в круговороте азота, серы и других элементов.</p>
+            </aside>
+        </div>
+    </section>
+
+    <div class="header-title" style="margin-top: 60px; padding: 20px;">
+        <h2 style="margin: 0; font-size: 1.5em;">Конец первой части</h2>
+        <p style="margin-top: 10px; font-size: 1em;">Напиши <strong>«дальше»</strong>, чтобы получить Часть 2: Ботаника (Корень, Побег, Стебель, Лист, Цветок, Плоды и Семейства).</p>
+    </div>
+
+</div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Биология: Большой конспект (Часть 2 - Ботаника)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #fcf9f5;
+            --bg-card: #f4ebe2;
+            --bg-sidebar: #e8dbcd;
+            --text-main: #4a3b32;
+            --text-muted: #7a6558;
+            --accent-coffee: #a67c63;
+            --accent-light: #d4b8a5;
+            --accent-green: #9cb39a;
+            --accent-blue: #9cafc4;
+            --accent-pink: #d4a5a5;
+            --border-radius: 16px;
+            --shadow: 0 10px 30px rgba(166, 124, 99, 0.1);
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Lora', serif;
+            color: var(--accent-coffee);
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header-title {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--bg-card), var(--bg-main));
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--accent-light);
+        }
+
+        .header-title h1 {
+            font-size: 3em;
+            margin: 0 0 10px 0;
+            letter-spacing: 2px;
+        }
+
+        .header-title p {
+            color: var(--text-muted);
+            font-size: 1.2em;
+            margin: 0;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            border-left: 6px solid var(--accent-coffee);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            border-bottom: 2px dashed var(--accent-light);
+            padding-bottom: 10px;
+        }
+
+        .card h3 {
+            color: var(--text-main);
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .sidebar {
+            background-color: var(--bg-sidebar);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: inset 0 0 15px rgba(255,255,255,0.5), var(--shadow);
+            border: 1px solid #d8c5b6;
+            position: relative;
+            height: fit-content;
+        }
+
+        .sidebar::before {
+            content: "🌿";
+            font-size: 2em;
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: var(--bg-main);
+            padding: 0 10px;
+            border-radius: 50%;
+            box-shadow: var(--shadow);
+        }
+
+        .sidebar h4 {
+            margin-top: 10px;
+            color: #8c624a;
+            font-size: 1.2em;
+        }
+
+        .sidebar p {
+            font-size: 0.95em;
+            color: #5a493f;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        th, td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--bg-card);
+        }
+
+        th {
+            background-color: var(--bg-card);
+            color: var(--accent-coffee);
+            font-family: 'Lora', serif;
+            font-weight: 600;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .formula {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-coffee);
+            font-family: 'Lora', serif;
+            font-style: italic;
+            text-align: center;
+            font-size: 1.2em;
+            margin: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #fcebe2 0%, #fcebe2 100%);
+            padding: 0 5px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #b05a3a;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 600;
+            margin-right: 5px;
+            color: #fff;
+        }
+        .badge-green { background-color: var(--accent-green); }
+        .badge-blue { background-color: var(--accent-blue); }
+        .badge-pink { background-color: var(--accent-pink); }
+        .badge-coffee { background-color: var(--accent-coffee); }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        .toc {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+        }
+        .toc h2 { margin-top: 0; text-align: center; }
+        .toc ul { list-style-type: none; padding: 0; columns: 2; column-gap: 40px; }
+        .toc li { margin-bottom: 10px; }
+        .toc a {
+            color: var(--text-main);
+            text-decoration: none;
+            transition: color 0.3s;
+            display: block;
+            padding: 5px 10px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.5);
+        }
+        .toc a:hover { color: var(--accent-coffee); background: #fff; padding-left: 15px; }
+
+        .divider {
+            text-align: center;
+            font-size: 2em;
+            color: var(--accent-light);
+            margin: 40px 0;
+            letter-spacing: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr; }
+            .toc ul { columns: 1; }
+            .header-title h1 { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header class="header-title animate">
+        <h1>Биология: Полный курс</h1>
+        <p>Конспекты, схемы и разбор сложных тем в кофейно-пастельных тонах</p>
+        <p style="font-size: 0.9em; margin-top: 15px;">Часть 2: Ботаника (Анатомия, Физиология, Систематика)</p>
+    </header>
+
+    <nav class="toc animate">
+        <h2>Оглавление (Часть 2)</h2>
+        <ul>
+            <li><a href="#root">1. Вегетативные органы: Корень</a></li>
+            <li><a href="#shoot">2. Побег и Стебель</a></li>
+            <li><a href="#leaf">3. Лист</a></li>
+            <li><a href="#flower">4. Цветок и Соцветия</a></li>
+            <li><a href="#seed-fruit">5. Семя и Плод</a></li>
+            <li><a href="#water-exchange">6. Водный обмен растений</a></li>
+            <li><a href="#photosynthesis">7. Фотосинтез (Свет и Углерод)</a></li>
+            <li><a href="#light-info">8. Свет как источник информации</a></li>
+            <li><a href="#systematics">9. Систематика и Разнообразие</a></li>
+        </ul>
+    </nav>
+
+    <!-- СЕКЦИЯ 1: КОРЕНЬ -->
+    <section id="root" class="animate">
+        <div class="grid-2">
+            <div class="card">
+                <h2>1. Вегетативные органы: Корень</h2>
+                <p><strong>Корень</strong> — осевой вегетативный орган, обладающий радиальной симметрией, положительным геотропизмом и способностью неограниченно нарастать в длину.</p>
+                
+                <h3>Типы корней</h3>
+                <ul>
+                    <li><strong>Главный:</strong> Развивается из зародышевого корешка.</li>
+                    <li><strong>Боковые:</strong> Образуются на главном или других корнях (2-го, 3-го порядка).</li>
+                    <li><strong>Придаточные:</strong> Развиваются от стеблей, листьев, старых корней.</li>
+                </ul>
+
+                <h3>Корневые системы</h3>
+                <p><strong>Стержневая:</strong> Хорошо выражен главный корень (характерна для двудольных).<br>
+                <strong>Мочковатая:</strong> Главный корень не выражен, много придаточных (характерна для однодольных).</p>
+
+                <h3>Зоны молодого корня (снизу вверх)</h3>
+                <table>
+                    <tr>
+                        <th>Зона</th>
+                        <th>Функция / Особенность</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Корневой чехлик</strong></td>
+                        <td>Защита апикальной меристемы, выделение слизи.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Зона деления</strong></td>
+                        <td>Активное деление клеток (первичная меристема).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Зона растяжения</strong></td>
+                        <td>Клетки растягиваются за счет вакуолей.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Зона всасывания</strong></td>
+                        <td>Покрыта корневыми волосками (ризодерма), всасывает воду и соли.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Зона проведения</strong></td>
+                        <td>Транспорт веществ вверх (ксилема) и вниз (флоэма), ветвление.</td>
+                    </tr>
+                </table>
+
+                <h3>Внутреннее строение (первичное)</h3>
+                <ul>
+                    <li><strong>Эпиблема (ризодерма):</strong> Всасывающая ткань.</li>
+                    <li><strong>Первичная кора:</strong> Экзодерма, мезодерма, эндодерма (с поясками Каспари).</li>
+                    <li><strong>Центральный цилиндр (стела):</strong> Перицикл (здесь закладываются боковые корни), ксилема (звезда), флоэма.</li>
+                </ul>
+            </div>
+            
+            <aside class="sidebar">
+                <h4>Видоизменения корней</h4>
+                <p><strong>Запасающие:</strong> Корнеплоды (морковь, свёкла) и корневые клубни (георгин, батат).</p>
+                <p><strong>Дыхательные (пневматофоры):</strong> У болотных растений для получения кислорода.</p>
+                <p><strong>Воздушные:</strong> У орхидей (эпифитов) для поглощения влаги из воздуха.</p>
+                <p><strong>Корни-подпорки:</strong> У баньяна. <strong>Досковидные:</strong> У тропических деревьев.</p>
+                <p><strong>Корни-прицепки:</strong> У плюща.</p>
+                <p><strong>Корни-присоски (гаустории):</strong> У паразитов (повилика, омела).</p>
+                <p><strong>Втягивающие:</strong> У луковичных.</p>
+            </aside>
+        </div>
+    </section>
+
+    <div class="divider">❦ ❦ ❦</div>
+
+    <!-- СЕКЦИЯ 2: ПОБЕГ И СТЕБЕЛЬ -->
+    <section id="shoot" class="animate">
+        <div class="grid-2">
+            <div class="card">
+                <h2>2. Побег и Стебель</h2>
+                <p><strong>Побег</strong> — надземный осевой орган, состоящий из стебля, листьев и почек. Обладает отрицательным геотропизмом.</p>
+                
+                <h3>Строение</h3>
+                <ul>
+                    <li><strong>Узел:</strong> Место прикрепления листа.</li>
+                    <li><strong>Междоузлие:</strong> Расстояние между узлами.</li>
+                    <li><strong>Пазуха листа:</strong> Угол между листом и стеблем.</li>
+                    <li><strong>Почка:</strong> Зачаточный побег. Бывают вегетативные (листья), генеративные (цветки) и смешанные.</li>
+                </ul>
+
+                <h3>Типы ветвления</h3>
+                <ul>
+                    <li><strong>Дихотомическое:</strong> Верхушечная меристема делится на две (плауны, некоторые водоросли).</li>
+                    <li><strong>Моноподиальное:</strong> Рост за счет одной верхушечной почки (ель, сосна).</li>
+                    <li><strong>Симподиальное:</strong> Верхушечная почка отмирает, рост продолжает боковая (береза, тополь).</li>
+                    <li><strong>Ложнодихотомическое:</strong> Две супротивные боковые почки (сирень, каштан).</li>
+                    <li><strong>Кущение:</strong> Ветвление у основания (злаки).</li>
+                </ul>
+
+                <h3>Анатомия стебля</h3>
+                <p>Первичное строение (однодольные) состоит из эпидермы, первичной коры (хлоренхима, эндодерма) и стелы (проводящие пучки разбросаны).</p>
+                <p>Вторичное строение (двудольные): появляется <strong>камбий</strong>. Ксилема (древесина) откладывается внутрь, флоэма (луб) — наружу. В центре — сердцевина. Проводящие пучки расположены по кругу.</p>
+            </div>
+            
+            <aside class="sidebar">
+                <h4>Метаморфозы побега</h4>
+                <p><strong>Подземные:</strong></p>
+                <ul>
+                    <li><em>Корневище</em> (ландыш, пырей) — есть чешуи и почки.</li>
+                    <li><em>Клубень</em> (картофель) — утолщенный столон, есть глазки.</li>
+                    <li><em>Луковица</em> (лук, тюльпан) — донце и сочные чешуи.</li>
+                    <li><em>Клубнелуковица</em> (гладиолус).</li>
+                </ul>
+                <p><strong>Надземные:</strong></p>
+                <ul>
+                    <li><em>Колючки</em> (боярышник) — защита.</li>
+                    <li><em>Усики</em> (виноград) — прикрепление.</li>
+                    <li><em>Кладодии</em> (спаржа) — фотосинтез.</li>
+                    <li><em>Филлокладии</em> (иглица) — похожи на листья.</li>
+                </ul>
+            </aside>
+        </div>
+    </section>
+
+    <div class="divider">❦ ❦ ❦</div>
+
+    <!-- СЕКЦИЯ 3: ЛИСТ -->
+    <section id="leaf" class="animate">
+        <div class="grid-2">
+            <div class="card">
+                <h2>3. Лист</h2>
+                <p><strong>Лист</strong> — боковой вегетативный орган, характеризующийся двусторонней симметрией и ограниченным ростом.</p>
+                
+                <h3>Части листа</h3>
+                <ul>
+                    <li><strong>Листовая пластинка:</strong> Главная часть, осуществляет фотосинтез.</li>
+                    <li><strong>Черешок:</strong> Соединяет пластинку со стеблем. Листья без черешка — сидячие.</li>
+                    <li><strong>Основание:</strong> Место прикрепления к стеблю. Может разрастаться во <em>влагалище</em> (у злаков).</li>
+                    <li><strong>Прилистники:</strong> Листовидные образования у основания (защита).</li>
+                </ul>
+
+                <h3>Морфология</h3>
+                <ul>
+                    <li><strong>Простые:</strong> Одна пластинка (береза, дуб).</li>
+                    <li><strong>Сложные:</strong> Несколько листочков на общем рахисе (клевер, каштан).</li>
+                    <li><strong>Жилкование:</strong> Сетчатое (перистое, пальчатое) у двудольных; параллельное и дуговое у однодольных.</li>
+                    <li><strong>Листорасположение:</strong> Очередное, супротивное, мутовчатое.</li>
+                </ul>
+
+                <h3>Клеточное строение</h3>
+                <ul>
+                    <li><strong>Эпидерма (кожица):</strong> Покровная ткань, защищает. Устьица для газообмена и транспирации.</li>
+                    <li><strong>Мезофилл (основная ткань):</strong> Столбчатый (палисадный) и губчатый слои. Содержит хлоропласты.</li>
+                    <li><strong>Проводящая система:</strong> Жилки (ксилема и флоэма).</li>
+                </ul>
+            </div>
+            
+            <aside class="sidebar">
+                <h4>Метаморфозы листа</h4>
+                <p><strong>Колючки</strong> (кактус) — защита, снижение транспирации.</p>
+                <p><strong>Усики</strong> (горох) — лазание.</p>
+                <p><strong>Ловчие аппараты</strong> (росянка, венерина мухоловка) — у растений на болотах из-за нехватки азота.</p>
+                <p><strong>Сочные чешуи</strong> (лук) — запас воды и питательных веществ.</p>
+            </aside>
+        </div>
+    </section>
+
+    <div class="divider">❦ ❦ ❦</div>
+
+    <!-- СЕКЦИЯ 4: ЦВЕТОК -->
+    <section id="flower" class="animate">
+        <div class="grid-2">
+            <div class="card">
+                <h2>4. Цветок и Соцветия</h2>
+                <p><strong>Цветок</strong> — видоизмененный, укороченный генеративный побег, служащий для размножения.</p>
+                
+                <h3>Строение (снаружи внутрь)</h3>
+                <ul>
+                    <li><strong>Цветоножка и цветоложе:</strong> Ось цветка. Может быть выпуклым, вогнутым, гипантием (срастание с околоцветником, как у роз).</li>
+                    <li><strong>Околоцветник:</strong>
+                        <ul>
+                            <li><em>Двойной:</em> Чашечка (зеленая, защита) + Венчик (яркий, привлечение).</li>
+                            <li><em>Простой:</em> Весь венчиковидный (тюльпан) или чашечковидный (крапива).</li>
+                            <li><em>Голый:</em> Околоцветника нет (осока).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Андроцей:</strong> Совокупность тычинок. Тычинка = пыльник + тычиночная нить.</li>
+                    <li><strong>Гинецей:</strong> Совокупность плодолистиков. Пестик = рыльце + столбик + завязь.</li>
+                </ul>
+
+                <h3>Завязь</h3>
+                <p><strong>Верхняя:</strong> Остальные части крепятся под ней (томат, вишня).<br>
+                <strong>Нижняя:</strong> Остальные части прикреплены над ней, она срастается со стенками цветоложа (огурец, яблоко).</p>
+
+                <h3>Формулы цветков</h3>
+                <div class="formula">
+                    * — актиноморфный (правильный)<br>
+                    ↑ — зигоморфный (неправильный)<br>
+                    ♀ — женский, ♂ — мужской<br>
+                    Ca — чашечка, Co — венчик, P — простой околоцветник<br>
+                    A — андроцей, G — гинецей
+                </div>
+            </div>
+            
+            <aside class="sidebar">
+                <h4>Двойное оплодотворение (Навашин)</h4>
+                <p>Уникально для цветковых!</p>
+                <p>1 спермий + яйцеклетка (n) = Зигота (2n) → зародыш.</p>
+                <p>2 спермий + центральная клетка (2n) = Эндосперм (3n) → питательная ткань.</p>
+                <hr style="border: 1px dashed var(--accent-light); margin: 15px 0;">
+                <h4>Соцветия</h4>
+                <p><strong>Простые:</strong> Кисть (черемуха), Колос (подорожник), Початок (кукуруза), Зонтик (вишня), Корзинка (подсолнечник).</p>
+                <p><strong>Сложные:</strong> Метелка (сирень), Сложный зонтик (укроп), Сложный колос (пшеница).</p>
+            </aside>
+        </div>
+    </section>
+
+    <div class="divider">❦ ❦ ❦</div>
+
+    <!-- СЕКЦИЯ 5: СЕМЯ И ПЛОД -->
+    <section id="seed-fruit" class="animate">
+        <div class="grid-2">
+            <div class="card">
+                <h2>5. Семя и Плод</h2>
+                
+                <h3>Семя</h3>
+                <p>Развивается из семязачатка. Состоит из кожуры, зародыша и запаса питательных веществ.</p>
+                <ul>
+                    <li><strong>Двудольные:</strong> 2 семядоли. Запас часто в семядолях (фасоль) или эндосперме (мак).</li>
+                    <li><strong>Однодольные:</strong> 1 семядоля (щиток). Запас в эндосперме (пшеница). Сверху зародыш защищен колеоптилем.</li>
+                </ul>
+
+                <h3>Плод</h3>
+                <p>Развивается из завязи. Состоит из околоплодника (перикарпия) и семян.</p>
+                <table>
+                    <tr>
+                        <th>Тип плода</th>
+                        <th>Характеристика</th>
+                        <th>Примеры</th>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="background: var(--bg-card); font-weight: bold; text-align: center;">СУХИЕ (односемянные)</td>
+                    </tr>
+                    <tr>
+                        <td>Зерновка</td>
+                        <td>Околоплодник срастается с кожурой</td>
+                        <td>Пшеница, кукуруза</td>
+                    </tr>
+                    <tr>
+                        <td>Семянка</td>
+                        <td>Кожистый околоплодник</td>
+                        <td>Подсолнечник, одуванчик</td>
+                    </tr>
+                    <tr>
+                        <td>Орех / Орешек</td>
+                        <td>Деревянистый околоплодник</td>
+                        <td>Лещина / Гречиха</td>
+                    </tr>
+                    <tr>
+                        <td>Желудь</td>
+                        <td>С плюской</td>
+                        <td>Дуб</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="background: var(--bg-card); font-weight: bold; text-align: center;">СУХИЕ (многосемянные, вскрывающиеся)</td>
+                    </tr>
+                    <tr>
+                        <td>Боб</td>
+                        <td>Вскрывается по двум швам</td>
+                        <td>Горох, фасоль</td>
+                    </tr>
+                    <tr>
+                        <td>Стручок</td>
+                        <td>С ложной перегородкой (реплумом)</td>
+                        <td>Капуста, редис</td>
+                    </tr>
+                    <tr>
+                        <td>Коробочка</td>
+                        <td>Вскрывается крышечкой или зубцами</td>
+                        <td>Мак, тюльпан</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="background: var(--bg-card); font-weight: bold; text-align: center;">СОЧНЫЕ</td>
+                    </tr>
+                    <tr>
+                        <td>Костянка</td>
+                        <td>Сочный мезокарпий, деревянистый эндокарпий (косточка)</td>
+                        <td>Слива, вишня, персик</td>
+                    </tr>
+                    <tr>
+                        <td>Ягода</td>
+                        <td>Полностью сочный околоплодник</td>
+                        <td>Томат, виноград, черника</td>
+                    </tr>
+                    <tr>
+                        <td>Яблоко</td>
+                        <td>Ложный плод (участвует цветоложе)</td>
+                        <td>Яблоня, груша</td>
+                    </tr>
+                    <tr>
+                        <td>Тыквина</td>
+                        <td>Твердый экзокарпий, сочный мезо/эндокарпий</td>
+                        <td>Огурец, арбуз, тыква</td>
+                    </tr>
+                    <tr>
+                        <td>Гесперидий</td>
+                        <td>Померанец (цитрусовые)</td>
+                        <td>Апельсин, лимон</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <aside class="sidebar">
+                <h4>Сборные плоды (Апокарпные)</h4>
+                <p>Многоорешек (земляника - орешки на сочном цветоложе).</p>
+                <p>Многокостянка (малина, ежевика).</p>
+                <p>Многолистовка (пион).</p>
+                <hr style="border: 1px dashed var(--accent-light); margin: 15px 0;">
+                <h4>Распространение плодов</h4>
+                <p>Ветром (анемохория) — крылатки (клен), парашютики (одуванчик).</p>
+                <p>Водой (гидрохория) — кокос.</p>
+                <p>Животными (зоохория) — сочные плоды, цепкие колючки (репейник).</p>
+                <p>Саморазбрасыванием (автохория) — бешеный огурец.</p>
+            </aside>
+        </div>
+    </section>
+
+    <div class="divider">❦ ❦ ❦</div>
+
+    <!-- СЕКЦИЯ 6: ВОДНЫЙ ОБМЕН -->
+    <section id="water-exchange" class="animate">
+        <div class="grid-2">
+            <div class="card">
+                <h2>6. Водный обмен растений</h2>
+                <p><strong>Водный потенциал (ψw)</strong> — способность воды двигаться. Вода всегда движется от большего потенциала (менее отрицательного) к меньшему (более отрицательному).</p>
+                
+                <div class="formula">
+                    ψw = ψπ + ψp<br>
+                    где ψπ — осмотический потенциал (отрицательный),<br>
+                    ψp — гидростатический потенциал (тургор, положительный).
+                </div>
+
+                <h3>Осмос и тургор</h3>
+                <ul>
+                    <li><strong>Гипертонический раствор:</strong> Концентрация снаружи больше → вода выходит → <strong>плазмолиз</strong> (клетка сжимается).</li>
+                    <li><strong>Гипотонический раствор:</strong> Концентрация снаружи меньше → вода входит → тургор (клетка напрягается).</li>
+                </ul>
+
+                <h3>Механизмы движения воды</h3>
+                <p><strong>Нижний концевой двигатель:</strong> Корневое давление (вода всасывается корнями и выталкивается вверх).</p>
+                <p><strong>Верхний концевой двигатель:</strong> Транспирация (испарение воды листьями). Создает натяжение (когезия и адгезия), подтягивающее воду вверх по ксилеме.</p>
+                <p>Устьица регулируют транспирацию. Открываются при накоплении ионов K+ (вода заходит, клетки набухают). Закрываются под действием <strong>абсцизовой кислоты (АБК)</strong> при стрессе/засухе.</p>
+            </div>
+            
+            <aside class="sidebar">
+                <h4>Пути транспорта воды в корне</h4>
+                <p><strong>Апопластный:</strong> По клеточным стенкам и межклетникам (основной путь для воды).</p>
+                <p><strong>Симпластный:</strong> По цитоплазме через плазмодесмы.</p>
+                <p>В эндодерме вода упирается в пояски Каспари (лигнифицированные стенки) и вынуждена переходить в симпласт.</p>
+            </aside>
+        </div>
+    </section>
+
+    <div class="divider">❦ ❦ ❦</div>
+
+    <!-- СЕКЦИЯ 7: ФОТОСИНТЕЗ -->
+    <section id="photosynthesis" class="animate">
+        <div class="grid-2">
+            <div class="card">
+                <h2>7. Фотосинтез</h2>
+                <p>Процесс преобразования энергии света в энергию химических связей органических веществ.</p>
+                <div class="formula">
+                    6 CO2 + 6 H2O + свет = C6H12O6 + 6 O2
+                </div>
+
+                <h3>Световая фаза (на мембранах тилакоидов)</h3>
+                <ol>
+                    <li><strong>Фотосистема II (ФС II):</strong> Поглощает свет (P680), возбуждает электрон. Электрон идет на феофитин → пластохинон (PQ).</li>
+                    <li><strong>Фотолиз воды:</strong> Марганцевый кластер расщепляет H2O на электроны (заполняют дырку в ФС II), протоны (в люмен) и O2 (побочный продукт).</li>
+                    <li><strong>Цитохром b6f комплекс:</strong> Перекачивает протоны в люмен, создавая градиент.</li>
+                    <li><strong>Фотосистема I (ФС I):</strong> Поглощает свет (P700), электрон идет на ферредоксин → ферредоксин-НАДФ-редуктаза → синтез <strong>НАДФН</strong>.</li>
+                    <li><strong>АТФ-синтаза:</strong> Использует протонный градиент для синтеза <strong>АТФ</strong>.</li>
+                </ol>
+
+                <h3>Темновая фаза (Цикл Кальвина, в строме)</h3>
+                <ol>
+                    <li><strong>Карбоксилирование:</strong> Фермент <strong>Рубиско</strong> присоединяет CO2 к Рибулозо-1,5-бисфосфату (РБФ) → 2 молекулы ФГК (3-фосфоглицериновая кислота).</li>
+                    <li><strong>Восстановление:</strong> ФГК + АТФ + НАДФН → ФГА (3-фосфоглицериновый альдегид).</li>
+                    <li><strong>Регенерация:</strong> Из 5 ФГА с затратой АТФ снова образуется 3 РБФ.</li>
+                </ol>
+                <p>Для синтеза 1 глюкозы нужно 6 CO2, 18 АТФ и 12 НАДФН.</p>
+
+                <h3>Фотодыхание</h3>
+                <p>Рубиско может связывать не только CO2, но и O2 (у него выше аффинитет к O2). Это происходит при высокой температуре, закрытии устьиц. Это расточительный процесс, но он защищает от избытка энергии и участвует в метаболизме азота.</p>
+            </div>
+            
+            <aside class="sidebar">
+                <h4>Как растения борются с фотодыханием?</h4>
+                <p><strong>C4-фотосинтез (Кукуруза, тростник):</strong> Пространственное разделение. CO2 сначала фиксируется в мезофилле в ФЕП (образуя малат), затем малат идет в клетки обкладки (кранц-анатомия), где отдает CO2 Рубиско. Рубиско не контактирует с O2.</p>
+                <hr style="border: 1px dashed var(--accent-light); margin: 15px 0;">
+                <p><strong>CAM-фотосинтез (Кактусы, суккуленты):</strong> Временное разделение. Ночью устьица открыты, CO2 фиксируется в малат. Днем устьица закрыты (чтобы не терять воду), малат расщепляется, отдавая CO2 для цикла Кальвина.</p>
+            </aside>
+        </div>
+    </section>
+
+    <div class="divider">❦ ❦ ❦</div>
+
+    <!-- СЕКЦИЯ 8: СВЕТ КАК ИНФОРМАЦИЯ -->
+    <section id="light-info" class="animate">
+        <div class="grid-2">
+            <div class="card">
+                <h2>8. Свет как источник информации</h2>
+                <p>Растения не просто едят свет, они считывают его параметры (интенсивность, длину волны, продолжительность).</p>
+                
+                <h3>Фитохромы</h3>
+                <p>Рецепторы красного и дальнего красного света.</p>
+                <ul>
+                    <li>Поглощает красный свет (660 нм) → переходит в активную форму (Pfr).</li>
+                    <li>Поглощает дальний красный (730 нм) → переходит в неактивную форму (Pr).</li>
+                </ul>
+                <p>Функции: прорастание семян, деэтиоляция (формирование нормального проростка на свету), реакция избегания тени (удлинение стебля в тени, где много дальнего красного света), зацветание.</p>
+
+                <h3>Криптохромы и Фототропины</h3>
+                <p>Рецепторы синего света.</p>
+                <ul>
+                    <li><strong>Криптохромы:</strong> Отвечают за деэтиоляцию, запуск цветения, открытие устьиц.</li>
+                    <li><strong>Фототропины:</strong> Отвечают за <strong>фототропизм</strong> (изгиб к свету), движение хлоропластов.</li>
+                </ul>
+
+                <h3>Фотопериодизм</h3>
+                <p>Реакция растений на длину светового дня (зацветание).</p>
+                <ul>
+                    <li><strong>Растения длинного дня:</strong> Зацветают, когда день длиннее ночи (пшеница).</li>
+                    <li><strong>Растения короткого дня:</strong> Зацветают, когда ночь длиннее дня (хризантема).</li>
+                    <li><em>Интересный факт:</em> Если короткодневному растению прервать ночь вспышкой света, оно не зацветет.</li>
+                </ul>
+            </div>
+            
+            <aside class="sidebar">
+                <h4>Что такое этиоляция?</h4>
+                <p>Если росток растет в темноте, он вырастает бледным (без хлорофилла), с длинным стеблем и недоразвитыми листьями. Это стратегия «пробиться к свету как можно быстрее». На свету фитохромы запускают нормальное развитие (деэтиоляцию).</p>
+            </aside>
+        </div>
+    </section>
+
+    <div class="divider">❦ ❦ ❦</div>
+
+    <!-- СЕКЦИЯ 9: СИСТЕМАТИКА -->
+    <section id="systematics" class="animate">
+        <div class="card">
+            <h2>9. Систематика и Разнообразие</h2>
+            
+            <h3>Низшие растения: Водоросли</h3>
+            <p>Сборная группа фотосинтезирующих организмов. Тело — <strong>таллом (слоевище)</strong>, нет органов и тканей.</p>
+            <ul>
+                <li><strong>Зеленые:</strong> Хламидомонада, Хлорелла, Спирогира, Улотрикс. Хлорофилл a и b. Есть пиреноиды.</li>
+                <li><strong>Бурые:</strong> Ламинария, Фукус. Глубина до 50 м. Пигмент фукоксантин. Запасное вещество — ламинарин.</li>
+                <li><strong>Красные (Багрянки):</strong> Порфира. Глубина до 200 м. Пигменты фикобилины. Источник агар-агара.</li>
+            </ul>
+
+            <h3>Лишайники</h3>
+            <p>Симбиоз гриба (микобионт) и водоросли/цианобактерии (фикобионт). Индикаторы чистоты воздуха. Растут очень медленно. Формы: накипные, листоватые, кустистые.</p>
+
+            <h3>Высшие споровые растения</h3>
+            <ul>
+                <li><strong>Мхи:</strong> Нет корней (ризоиды). В цикле преобладает гаметофит (n) — зеленое растение. Спорофит — коробочка на ножке.</li>
+                <li><strong>Плауны:</strong> Микрофиллы. Стробилы (спороносные колоски).</li>
+                <li><strong>Хвощи:</strong> Членистые стебли, пропитаны кремнеземом. Листья редуцированы до чешуек.</li>
+                <li><strong>Папоротники:</strong> Макрофиллы (вайи). Спорангии на нижней стороне листа (сорусы). Преобладает спорофит (2n).</li>
+            </ul>
+
+            <h3>Семенные растения: Голосеменные</h3>
+            <ul>
+                <li>Семязачатки лежат открыто (голо) на чешуях шишек.</li>
+                <li>Нет плодов и цветков. Размножение семенами.</li>
+                <li>Мужские шишки (с пыльцой) и женские (с семязачатками). Опыление ветром.</li>
+                <li>Представители: Сосна, Ель, Пихта, Лиственница, Гинкго, Саговники.</li>
+            </ul>
+
+            <h3>Покрытосеменные (Цветковые)</h3>
+            <p>Самый крупный отдел. Появились в меловом периоде. Семязачатки защищены завязью. Характерно двойное оплодотворение.</p>
+            <table>
+                <tr>
+                    <th>Признак</th>
+                    <th>Однодольные</th>
+                    <th>Двудольные</th>
+                </tr>
+                <tr>
+                    <td><strong>Семядоли</strong></td>
+                    <td>1</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><strong>Корневая система</strong></td>
+                    <td>Мочковатая</td>
+                    <td>Стержневая</td>
+                </tr>
+                <tr>
+                    <td><strong>Камбий</strong></td>
+                    <td>Нет (не утолщаются)</td>
+                    <td>Есть</td>
+                </tr>
+                <tr>
+                    <td><strong>Листья</strong></td>
+                    <td>Простые, параллельное/дуговое жилкование</td>
+                    <td>Простые/сложные, сетчатое</td>
+                </tr>
+                <tr>
+                    <td><strong>Цветок</strong></td>
+                    <td>Трехчленный (кратно 3)</td>
+                    <td>Пятичленный (кратно 5)</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <div class="header-title" style="margin-top: 60px; padding: 20px;">
+        <h2 style="margin: 0; font-size: 1.5em;">Конец второй части</h2>
+        <p style="margin-top: 10px; font-size: 1em;">Напиши <strong>«дальше»</strong>, чтобы получить Часть 3: Зоология (от простейших до млекопитающих).</p>
+    </div>
+
+</div>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Биология: Большой конспект (Часть 3 - Грибы и Человек)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #fcf9f5;
+            --bg-card: #f4ebe2;
+            --bg-sidebar: #e8dbcd;
+            --text-main: #4a3b32;
+            --text-muted: #7a6558;
+            --accent-coffee: #a67c63;
+            --accent-light: #d4b8a5;
+            --accent-green: #9cb39a;
+            --accent-blue: #9cafc4;
+            --accent-pink: #d4a5a5;
+            --border-radius: 16px;
+            --shadow: 0 10px 30px rgba(166, 124, 99, 0.1);
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Lora', serif;
+            color: var(--accent-coffee);
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header-title {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--bg-card), var(--bg-main));
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--accent-light);
+        }
+
+        .header-title h1 {
+            font-size: 3em;
+            margin: 0 0 10px 0;
+            letter-spacing: 2px;
+        }
+
+        .header-title p {
+            color: var(--text-muted);
+            font-size: 1.2em;
+            margin: 0;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            border-left: 6px solid var(--accent-coffee);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            border-bottom: 2px dashed var(--accent-light);
+            padding-bottom: 10px;
+        }
+
+        .card h3 {
+            color: var(--text-main);
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .sidebar {
+            background-color: var(--bg-sidebar);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: inset 0 0 15px rgba(255,255,255,0.5), var(--shadow);
+            border: 1px solid #d8c5b6;
+            position: relative;
+            height: fit-content;
+        }
+
+        .sidebar::before {
+            content: "🧠";
+            font-size: 2em;
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: var(--bg-main);
+            padding: 0 10px;
+            border-radius: 50%;
+            box-shadow: var(--shadow);
+        }
+
+        .sidebar-mushroom::before {
+            content: "🍄";
+        }
+
+        .sidebar-kidney::before {
+            content: "🫘";
+        }
+
+        .sidebar h4 {
+            margin-top: 10px;
+            color: #8c624a;
+            font-size: 1.2em;
+        }
+
+        .sidebar p {
+            font-size: 0.95em;
+            color: #5a493f;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        th, td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--bg-card);
+        }
+
+        th {
+            background-color: var(--bg-card);
+            color: var(--accent-coffee);
+            font-family: 'Lora', serif;
+            font-weight: 600;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .formula {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-coffee);
+            font-family: 'Lora', serif;
+            font-style: italic;
+            text-align: center;
+            font-size: 1.2em;
+            margin: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #fcebe2 0%, #fcebe2 100%);
+            padding: 0 5px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #b05a3a;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 600;
+            margin-right: 5px;
+            color: #fff;
+        }
+        .badge-green { background-color: var(--accent-green); }
+        .badge-blue { background-color: var(--accent-blue); }
+        .badge-pink { background-color: var(--accent-pink); }
+        .badge-coffee { background-color: var(--accent-coffee); }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        .toc {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+        }
+        .toc h2 { margin-top: 0; text-align: center; }
+        .toc ul { list-style-type: none; padding: 0; columns: 2; column-gap: 40px; }
+        .toc li { margin-bottom: 10px; }
+        .toc a {
+            color: var(--text-main);
+            text-decoration: none;
+            transition: color 0.3s;
+            display: block;
+            padding: 5px 10px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.5);
+        }
+        .toc a:hover { color: var(--accent-coffee); background: #fff; padding-left: 15px; }
+
+        .divider {
+            text-align: center;
+            font-size: 2em;
+            color: var(--accent-light);
+            margin: 40px 0;
+            letter-spacing: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr; }
+            .toc ul { columns: 1; }
+            .header-title h1 { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header class="header-title animate">
+        <h1>Биология: Полный курс</h1>
+        <p>Конспекты, схемы и разбор сложных тем в кофейно-пастельных тонах</p>
+        <p style="font-size: 0.9em; margin-top: 15px;">Часть 3: Царство Грибы и Выделительная система человека</p>
+    </header>
+
+    <nav class="toc animate">
+        <h2>Оглавление (Часть 3)</h2>
+        <ul>
+            <li><a href="#fungi-basics">1. Царство Грибы: Общая характеристика</a></li>
+            <li><a href="#fungi-repro">2. Размножение грибов</a></li>
+            <li><a href="#fungi-classes">3. Классификация грибов</a></li>
+            <li><a href="#fungi-parasites">4. Грибы-паразиты и их значение</a></li>
+            <li><a href="#excretory-system">5. Выделительная система: Обзор</a></li>
+            <li><a href="#kidney">6. Строение почек</a></li>
+            <li><a href="#nephron">7. Нефрон — структурная единица почки</a></li>
+            <li><a href="#urine-formation">8. Процесс образования мочи</a></li>
+            <li><a href="#kidney-regulation">9. Регуляция работы почек</a></li>
+        </ul>
+    </nav>
+
+    <!-- СЕКЦИЯ 1: ГРИБЫ ОБЩЕЕ -->
+    <section id="fungi-basics" class="animate">
+        <div class="grid-2">
+            <div class="card">
+                <h2>1. Царство Грибы: Общая характеристика</h2>
+                <p><strong>Грибы</strong> — это отдельное царство живой природы, сочетающее в себе признаки как растений, так и животных.</p>
+                
+                <h3>Строение</h3>
+                <ul>
+                    <li>Вегетативное тело (таллом) состоит из ветвящихся нитей — <strong>гиф</strong>.</li>
+                    <li>Совокупность гиф образует <strong>мицелий (грибницу)</strong>.</li>
+                    <li><strong>Низшие грибы:</strong> мицелий несептированный (без перегородок), представляет собой одну гигантскую многоядерную клетку.</li>
+                    <li><strong>Высшие грибы:</strong> мицелий септированный (разделен перегородками на отдельные клетки, содержащие 1 или 2 ядра).</li>
+                    <li>Многие образуют <strong>плодовые тела</strong> (шляпка и ножка) — это тесно переплетенные гифы мицелия, служащие для образования спор.</li>
+                </ul>
+
+                <h3>Клеточное строение</h3>
+                <ul>
+                    <li>Клеточная стенка состоит из <strong>хитина</strong> (как у членистоногих), реже из целлюлозы.</li>
+                    <li>Пластиды отсутствуют.</li>
+                    <li>Есть вакуоли, ядро (или несколько ядер).</li>
+                </ul>
+            </div>
+            
+            <aside class="sidebar sidebar-mushroom">
+                <h4>Сходства с растениями:</h4>
+                <p>- Неограниченный рост.<br>
+                - Неподвижность.<br>
+                - Жесткая клеточная стенка.<br>
+                - Размножение спорами.</p>
+                <hr style="border: 1px dashed var(--accent-light); margin: 15px 0;">
+                <h4>Сходства с животными:</h4>
+                <p>- Гетеротрофный тип питания.<br>
+                - Запасное вещество — <strong>гликоген</strong>.<br>
+                - В состав клеточной стенки входит хитин.<br>
+                - Единственный задний жгутик у подвижных клеток (зооспор и гамет).</p>
+            </aside>
+        </div>
+
+        <div class="card">
+            <h3>Типы питания грибов</h3>
+            <table>
+                <tr>
+                    <th>Тип</th>
+                    <th>Описание</th>
+                    <th>Примеры</th>
+                </tr>
+                <tr>
+                    <td><strong>Сапротрофы</strong></td>
+                    <td>Питаются мертвым органическим веществом (редуценты).</td>
+                    <td>Мукор, дрожжи, шляпочные грибы (частично).</td>
+                </tr>
+                <tr>
+                    <td><strong>Паразиты</strong></td>
+                    <td>Питаются органическими веществами живых организмов.</td>
+                    <td>Спорынья, головня, трутовик.</td>
+                </tr>
+                <tr>
+                    <td><strong>Симбионты</strong></td>
+                    <td>Вступают в симбиоз с другими организмами.</td>
+                    <td><strong>Микориза</strong> (с корнями растений), <strong>Лишайники</strong> (с водорослями).</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <div class="divider">❦ ❦ ❦</div>
+
+    <!-- СЕКЦИЯ 2: РАЗМНОЖЕНИЕ ГРИБОВ -->
+    <section id="fungi-repro" class="animate">
+        <div class="grid-2">
+            <div class="card">
+                <h2>2. Размножение грибов</h2>
+                <p>Грибы размножаются тремя способами: вегетативным, бесполым и половым.</p>
+                
+                <h3>Бесполое размножение</h3>
+                <ul>
+                    <li><strong>Эндогенные споры (спорангиоспоры):</strong> Образуются внутри специальных органов — спорангиев (например, у мукора).</li>
+                    <li><strong>Экзогенные споры (конидии):</strong> Образуются на концах специальных гиф — конидиеносцев (например, у пеницилла, аспергилла).</li>
+                    <li><strong>Почкование:</strong> Характерно для дрожжей.</li>
+                </ul>
+
+                <h3>Половое размножение</h3>
+                <ul>
+                    <li><strong>Гаметангиогамия:</strong> Слияние половых структур, не дифференцированных на гаметы (зигогамия у мукора).</li>
+                    <li><strong>Соматогамия:</strong> Слияние содержимого вегетативных клеток мицелия (у шляпочных базидиомицетов).</li>
+                    <li><strong>Оогамия:</strong> Слияние крупной неподвижной яйцеклетки и мелкого подвижного сперматозоида.</li>
+                </ul>
+            </div>
+            
+            <aside class="sidebar sidebar-mushroom">
+                <h4>Что такое конъюгация?</h4>
+                <p>Это форма полового процесса, при которой сливается содержимое двух клеток (или гаметангиев) без образования гамет. У мукора при этом образуется зигоспора.</p>
+                <p>У шляпочных грибов (базидиомицетов) половой процесс выглядит как <strong>соматогамия</strong>: гаплоидные гифы разных полов (+ и -) сливаются, образуя дикарионический мицелий (клетки с двумя ядрами).</p>
+            </aside>
+        </div>
+    </section>
+
+    <div class="divider">❦ ❦ ❦</div>
+
+    <!-- СЕКЦИЯ 3: КЛАССИФИКАЦИЯ ГРИБОВ -->
+    <section id="fungi-classes" class="animate">
+        <div class="card">
+            <h2>3. Классификация грибов</h2>
+            
+            <h3>Низшие грибы: Зигомицеты</h3>
+            <p><strong>Представитель:</strong> Мукор (белая плесень).</p>
+            <ul>
+                <li>Мицелий несептированный (нечленистый), многоядерный.</li>
+                <li>Бесполое размножение: спорангиоспоры в шаровидных спорангиях.</li>
+                <li>Половое размножение: зигогамия (образование зиготы с толстой шиповатой оболочкой).</li>
+            </ul>
+
+            <h3>Высшие грибы</h3>
+            <table>
+                <tr>
+                    <th>Отдел</th>
+                    <th>Особенности размножения</th>
+                    <th>Представители</th>
+                </tr>
+                <tr>
+                    <td><strong>Аскомицеты</strong><br>(Сумчатые)</td>
+                    <td>Половое размножение с образованием <strong>сумок (асков)</strong>, в которых развиваются аскоспоры.</td>
+                    <td>Дрожжи, Пеницилл, Сморчок, Спорынья.</td>
+                </tr>
+                <tr>
+                    <td><strong>Базидиомицеты</strong></td>
+                    <td>Половое размножение с образованием <strong>базидий</strong> (на них экзогенно сидят базидиоспоры).</td>
+                    <td>Шляпочные грибы (белый, лисичка), Трутовик, Головня, Ржавчина.</td>
+                </tr>
+                <tr>
+                    <td><strong>Несовершенные грибы</strong><br>(Дейтеромицеты)</td>
+                    <td>Половой процесс не обнаружен (размножаются только бесполым путем).</td>
+                    <td>Фузариум (паразит злаков).</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="grid-2">
+            <div class="card">
+                <h3>Дрожжи (Аскомицеты)</h3>
+                <p>Одноклеточные грибы, тело которых состоит из одиночных овальных клеток.</p>
+                <ul>
+                    <li>Размножаются почкованием (бесполое).</li>
+                    <li>При недостатке питания и избытке кислорода — половой процесс (хологамия — слияние двух гаплоидных клеток с образованием сумки с 4 аскоспорами).</li>
+                    <li>Вызывают спиртовое брожение (расщепляют глюкозу до спирта и CO2).</li>
+                </ul>
+
+                <h3>Пеницилл (Аскомицеты)</h3>
+                <p>Плесневый гриб.</p>
+                <ul>
+                    <li>Мицелий септированный, ветвящийся, сначала белый, потом зеленоватый.</li>
+                    <li>Бесполое размножение: конидии (экзогенные споры) на конидиеносцах, имеющих вид кисточки.</li>
+                    <li>Используется для получения антибиотика пенициллина и в сыроварении.</li>
+                </ul>
+            </div>
+            
+            <aside class="sidebar sidebar-mushroom">
+                <h4>Шляпочные грибы (Базидиомицеты)</h4>
+                <p>Имеют плодовое тело (шляпка + ножка). Шляпка снизу имеет <strong>гименофор</strong>:</p>
+                <p>- <strong>Пластинчатый:</strong> Пластинки (сыроежка, лисичка, шампиньон).</p>
+                <p>- <strong>Трубчатый:</strong> Трубочки (белый гриб, подберезовик, масленок).</p>
+                <p>Мицелий дикарионический (в каждой клетке по 2 ядра).</p>
+            </aside>
+        </div>
+    </section>
+
+    <div class="divider">❦ ❦ ❦</div>
+
+    <!-- СЕКЦИЯ 4: ГРИБЫ-ПАРАЗИТЫ -->
+    <section id="fungi-parasites" class="animate">
+        <div class="grid-2">
+            <div class="card">
+                <h2>4. Грибы-паразиты и их значение</h2>
+                
+                <h3>Головня</h3>
+                <p>Паразитирует на злаковых растениях. При поражении вместо зерна получается черная пыль (споры гриба). Колосья выглядят как обугленные головешки. Заражение происходит на стадии цветения.</p>
+
+                <h3>Спорынья</h3>
+                <p>Паразитирует на злаках. На колосьях образуются черно-фиолетовые рожки (покоящаяся стадия гриба). Содержит ядовитые алкалоиды. Попадая в муку, вызывает тяжелые отравления (эрготизм).</p>
+
+                <h3>Трутовики</h3>
+                <p>Поражают лиственные породы деревьев. Плодовые тела многолетние, копытообразные. Разрушают древесину, превращая ее в труху. Даже после гибели дерева продолжают жить на мертвом субстрате и заражать здоровые деревья.</p>
+
+                <h3>Значение грибов</h3>
+                <ul>
+                    <li><strong>Редуценты:</strong> Участвуют в круговороте веществ, разлагают органику.</li>
+                    <li><strong>Пищевая промышленность:</strong> Хлебопечение, виноделие, пивоварение (дрожжи), сыроварение (пеницилл).</li>
+                    <li><strong>Медицина:</strong> Антибиотики (пенициллин), лечение малокровия (пивные дрожжи).</li>
+                    <li><strong>Сельское хозяйство:</strong> Микориза улучшает питание растений.</li>
+                </ul>
+            </div>
+            
+            <aside class="sidebar sidebar-mushroom">
+                <h4>Микориза</h4>
+                <p>Это симбиоз гриба и корней высшего растения. Гриб обеспечивает растение водой и минеральными солями, а растение делится с грибом органическими веществами (сахарами).</p>
+                <p>Многие шляпочные грибы названы по деревьям, с которыми образуют микоризу (подосиновик, подберезовик).</p>
+            </aside>
+        </div>
+    </section>
+
+    <div class="divider">❦ ❦ ❦</div>
+
+    <!-- СЕКЦИЯ 5: ВЫДЕЛИТЕЛЬНАЯ СИСТЕМА ОБЗОР -->
+    <section id="excretory-system" class="animate">
+        <div class="grid-2">
+            <div class="card">
+                <h2>5. Выделительная система: Обзор</h2>
+                <p><strong>Выделение</strong> — совокупность процессов, обеспечивающих удаление из организма отходов обмена веществ, избытка воды, солей, лекарств и чужеродных молекул.</p>
+                
+                <h3>Органы мочевыделительной системы</h3>
+                <ul>
+                    <li><strong>Почки:</strong> Парные органы бобовидной формы. Главный орган выделения.</li>
+                    <li><strong>Мочеточники:</strong> Трубки, соединяющие почки с мочевым пузырем.</li>
+                    <li><strong>Мочевой пузырь:</strong> Полый мышечный орган, вмещающий в среднем 750 мл мочи. Лежит в полости таза позади лобкового симфиза.</li>
+                    <li><strong>Мочеиспускательный канал (уретра):</strong> Трубка для выведения мочи. У мужчин длина 18-20 см, у женщин — 3,5 см. Имеет два сфинктера (гладкомышечный и поперечно-полосатый) для произвольной регуляции мочеиспускания.</li>
+                </ul>
+
+                <h3>Стенка мочевого пузыря</h3>
+                <p>Состоит из трех слоев: внутреннего (эпителиального), среднего (гладкомышечного) и наружного (соединительнотканного). Очень растяжима (толщина от 10-15 мм в спавшемся состоянии до 2-3 мм в растянутом).</p>
+            </div>
+            
+            <aside class="sidebar sidebar-kidney">
+                <h4>Зачем нам выделение?</h4>
+                <p>Ни один из удаленных продуктов не подлежит дальнейшему использованию в энергетическом и пластическом обмене. Это «мусор», который нужно убрать, чтобы организм не отравился.</p>
+                <p>Почки также регулируют водно-солевой баланс и артериальное давление.</p>
+            </aside>
+        </div>
+    </section>
+
+    <div class="divider">❦ ❦ ❦</div>
+
+    <!-- СЕКЦИЯ 6: СТРОЕНИЕ ПОЧЕК -->
+    <section id="kidney" class="animate">
+        <div class="grid-2">
+            <div class="card">
+                <h2>6. Строение почек</h2>
+                <p>Почки расположены у задней стенки брюшной полости на уровне последнего грудного и первых поясничных позвонков.</p>
+                <p>Размеры: длина 10-12 см, масса 120-150 г.</p>
+                
+                <h3>Внешнее строение</h3>
+                <ul>
+                    <li>Два края: наружный (выпуклый) и внутренний (вогнутый).</li>
+                    <li><strong>Ворота почки:</strong> Углубление на вогнутой стороне, через которое проходят мочеточник, нервы, почечная артерия и вена, лимфатические сосуды.</li>
+                </ul>
+
+                <h3>Внутреннее строение (на разрезе)</h3>
+                <ul>
+                    <li><strong>Корковое вещество:</strong> Наружный темный слой.</li>
+                    <li><strong>Мозговое вещество:</strong> Внутренний светлый слой, состоящий из почечных пирамид.</li>
+                    <li><strong>Почечные пирамиды:</strong> Верхушки пирамид обращены к почечной пазухе и называются почечными сосочками.</li>
+                    <li><strong>Малые и большие почечные чашки:</strong> Собирают мочу из сосочков.</li>
+                    <li><strong>Почечная лоханка:</strong> Переходит в мочеточник.</li>
+                </ul>
+            </div>
+            
+            <aside class="sidebar sidebar-kidney">
+                <h4>Корковое и мозговое вещество</h4>
+                <p>Корковое вещество содержит почечные тельца (капсулы с клубочками). Мозговое вещество содержит канальцы нефронов и собирательные трубочки.</p>
+                <p>Именно в мозговом веществе происходит концентрирование мочи.</p>
+            </aside>
+        </div>
+    </section>
+
+    <div class="divider">❦ ❦ ❦</div>
+
+    <!-- СЕКЦИЯ 7: НЕФРОН -->
+    <section id="nephron" class="animate">
+        <div class="grid-2">
+            <div class="card">
+                <h2>7. Нефрон — структурная единица почки</h2>
+                <p>В каждой почке около 1 миллиона нефронов. Нефрон состоит из капсулы и системы канальцев.</p>
+                
+                <h3>Строение нефрона</h3>
+                <ol>
+                    <li><strong>Капсула Боумена-Шумлянского:</strong> Двустенная чаша, внутри которой находится капиллярный клубочек (Мальпигиев клубочек).</li>
+                    <li><strong>Проксимальный извитой каналец:</strong> Отходит от капсулы, извивается в корковом веществе.</li>
+                    <li><strong>Петля Генле:</strong> Опускается в мозговое вещество и поднимается обратно. Имеет нисходящую и восходящую части.</li>
+                    <li><strong>Дистальный извитой каналец:</strong> Снова в корковом веществе.</li>
+                    <li><strong>Собирательная трубочка:</strong> Собирает мочу от нескольких нефронов, идет в мозговое вещество.</li>
+                </ol>
+
+                <h3>Особенности кровоснабжения</h3>
+                <p>Приносящая артериола (входящая в клубочек) имеет <strong>больший диаметр</strong>, чем выносящая (выходящая). Это создает высокое давление в капиллярах клубочка (около 50 мм рт. ст.), необходимое для фильтрации.</p>
+            </div>
+            
+            <aside class="sidebar sidebar-kidney">
+                <h4>Виды нефронов (для олимпиадников)</h4>
+                <p><strong>Суперфициальные:</strong> Клубочки на поверхности коры, короткая петля Генле.</p>
+                <p><strong>Интракортикальные:</strong> Клубочки в средней части коры (самые многочисленные).</p>
+                <p><strong>Юкстамедуллярные:</strong> Клубочки на границе коры и мозгового вещества, самые длинные петли Генле (доходят до вершины сосочка).</p>
+            </aside>
+        </div>
+    </section>
+
+    <div class="divider">❦ ❦ ❦</div>
+
+    <!-- СЕКЦИЯ 8: МОЧЕОБРАЗОВАНИЕ -->
+    <section id="urine-formation" class="animate">
+        <div class="grid-2">
+            <div class="card">
+                <h2>8. Процесс образования мочи (Диурез)</h2>
+                <p>Диурез включает две последовательные фазы: фильтрацию и реабсорбцию (обратное всасывание).</p>
+                
+                <h3>Фаза 1: Фильтрация (в капсуле нефрона)</h3>
+                <ul>
+                    <li>За счет высокого давления кровь продавливается через стенки капилляров и капсулы.</li>
+                    <li>В фильтрации участвует белковая сеть (белок <strong>нефрин</strong>). Мутации гена нефрина вызывают тяжелые болезни почек.</li>
+                    <li>Проходят: вода, неорганические ионы, мелкие органические молекулы (глюкоза, аминокислоты).</li>
+                    <li><strong>Не проходят:</strong> форменные элементы крови (эритроциты, лейкоциты) и крупные белки плазмы.</li>
+                    <li>Образуется <strong>первичная моча</strong> (около 170 литров в сутки!).</li>
+                </ul>
+
+                <h3>Фаза 2: Реабсорбция (в извитых канальцах)</h3>
+                <ul>
+                    <li>Из первичной мочи обратно в кровь всасывается вода, глюкоза, аминокислоты, витамины, необходимые соли.</li>
+                    <li>Происходит в проксимальных и дистальных канальцах, а также в петле Генле.</li>
+                    <li>Образуется <strong>вторичная моча</strong> (около 1,5-2 литров в сутки).</li>
+                    <li>Состав вторичной мочи: 95% вода, 2-3% мочевина, 1% ионы, мочевая кислота, пигменты (производные билирубина).</li>
+                    <li>Наличие глюкозы в большом количестве во вторичной моче — признак <strong>сахарного диабета</strong>.</li>
+                </ul>
+            </div>
+            
+            <aside class="sidebar sidebar-kidney">
+                <h4>Сравнение первичной и вторичной мочи</h4>
+                <p><strong>Первичная:</strong> Похожа на плазму крови по составу (кроме белков). Много воды.</p>
+                <p><strong>Вторичная:</strong> Концентрированный раствор отходов. В норме глюкозы и белков быть не должно.</p>
+            </aside>
+        </div>
+    </section>
+
+    <div class="divider">❦ ❦ ❦</div>
+
+    <!-- СЕКЦИЯ 9: РЕГУЛЯЦИЯ -->
+    <section id="kidney-regulation" class="animate">
+        <div class="grid-2">
+            <div class="card">
+                <h2>9. Регуляция работы почек</h2>
+                <p>Регуляция фильтрации осуществляется за счет изменения давления крови в клубочковых капиллярах. Регуляция реабсорбции — в основном гормональная.</p>
+                
+                <h3>Гормоны, влияющие на почки</h3>
+                <ul>
+                    <li><strong>Вазопрессин (АДГ):</strong> Увеличивает реабсорбцию воды в собирательных трубочках (уменьшает объем мочи, концентрирует ее).</li>
+                    <li><strong>Эритропоэтин:</strong> Стимулирует производство эритроцитов в красном костном мозге (выделяется при снижении кислорода в крови).</li>
+                    <li><strong>Ренин:</strong> Выделяется в ответ на снижение давления в почечной артерии. Превращает ангиотензиноген в ангиотензин, который сужает сосуды и повышает давление.</li>
+                    <li><strong>Альдостерон:</strong> Усиливает реабсорбцию натрия (а за ним и воды).</li>
+                </ul>
+            </div>
+            
+            <aside class="sidebar sidebar-kidney">
+                <h4>Почему почки — это еще и эндокринный орган?</h4>
+                <p>Помимо выделения, они выделяют гормоны (ренин, эритропоэтин) и регулируют артериальное давление. Это делает их жизненно важными для всего организма.</p>
+            </aside>
+        </div>
+    </section>
+
+    <div class="header-title" style="margin-top: 60px; padding: 20px;">
+        <h2 style="margin: 0; font-size: 1.5em;">Конец третьей части</h2>
+        <p style="margin-top: 10px; font-size: 1em;">Основной материал пройден! Если нужны еще части (например, по Экологии или Эволюции), напиши <strong>«дальше»</strong>.</p>
+    </div>
+
+</div>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Биология: Большой конспект (Часть 4 - Размножение растений)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #fcf9f5;
+            --bg-card: #f4ebe2;
+            --bg-sidebar: #e8dbcd;
+            --text-main: #4a3b32;
+            --text-muted: #7a6558;
+            --accent-coffee: #a67c63;
+            --accent-light: #d4b8a5;
+            --accent-green: #9cb39a;
+            --accent-blue: #9cafc4;
+            --accent-pink: #d4a5a5;
+            --border-radius: 16px;
+            --shadow: 0 10px 30px rgba(166, 124, 99, 0.1);
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Lora', serif;
+            color: var(--accent-coffee);
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header-title {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--bg-card), var(--bg-main));
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--accent-light);
+        }
+
+        .header-title h1 {
+            font-size: 3em;
+            margin: 0 0 10px 0;
+            letter-spacing: 2px;
+        }
+
+        .header-title p {
+            color: var(--text-muted);
+            font-size: 1.2em;
+            margin: 0;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            border-left: 6px solid var(--accent-coffee);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            border-bottom: 2px dashed var(--accent-light);
+            padding-bottom: 10px;
+        }
+
+        .card h3 {
+            color: var(--text-main);
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .sidebar {
+            background-color: var(--bg-sidebar);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: inset 0 0 15px rgba(255,255,255,0.5), var(--shadow);
+            border: 1px solid #d8c5b6;
+            position: relative;
+            height: fit-content;
+        }
+
+        .sidebar::before {
+            content: "🌱";
+            font-size: 2em;
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: var(--bg-main);
+            padding: 0 10px;
+            border-radius: 50%;
+            box-shadow: var(--shadow);
+        }
+
+        .sidebar h4 {
+            margin-top: 10px;
+            color: #8c624a;
+            font-size: 1.2em;
+        }
+
+        .sidebar p {
+            font-size: 0.95em;
+            color: #5a493f;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        th, td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--bg-card);
+        }
+
+        th {
+            background-color: var(--bg-card);
+            color: var(--accent-coffee);
+            font-family: 'Lora', serif;
+            font-weight: 600;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .formula {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-coffee);
+            font-family: 'Lora', serif;
+            font-style: italic;
+            text-align: center;
+            font-size: 1.2em;
+            margin: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #fcebe2 0%, #fcebe2 100%);
+            padding: 0 5px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #b05a3a;
+        }
+
+        .step-box {
+            background: var(--bg-main);
+            border-left: 4px solid var(--accent-blue);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            background: var(--accent-blue);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 25px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        .toc {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+        }
+        .toc h2 { margin-top: 0; text-align: center; }
+        .toc ul { list-style-type: none; padding: 0; columns: 2; column-gap: 40px; }
+        .toc li { margin-bottom: 10px; }
+        .toc a {
+            color: var(--text-main);
+            text-decoration: none;
+            transition: color 0.3s;
+            display: block;
+            padding: 5px 10px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.5);
+        }
+        .toc a:hover { color: var(--accent-coffee); background: #fff; padding-left: 15px; }
+
+        .divider {
+            text-align: center;
+            font-size: 2em;
+            color: var(--accent-light);
+            margin: 40px 0;
+            letter-spacing: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr; }
+            .toc ul { columns: 1; }
+            .header-title h1 { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header class="header-title animate">
+        <h1>Биология: Полный курс</h1>
+        <p>Конспекты, схемы и разбор сложных тем в кофейно-пастельных тонах</p>
+        <p style="font-size: 0.9em; margin-top: 15px;">Часть 4: Вегетативное размножение и Жизненный цикл Покрытосеменных</p>
+    </header>
+
+    <nav class="toc animate">
+        <h2>Оглавление (Часть 4)</h2>
+        <ul>
+            <li><a href="#vegetative">1. Вегетативное размножение растений</a></li>
+            <li><a href="#grafting">2. Прививки и Культура тканей</a></li>
+            <li><a href="#microsporogenesis">3. Микроспорогенез и Микрогаметогенез</a></li>
+            <li><a href="#megasporogenesis">4. Мегаспорогенез и Зародышевый мешок</a></li>
+            <li><a href="#double-fert">5. Двойное оплодотворение</a></li>
+            <li><a href="#seed-dev">6. Развитие семени и плода</a></li>
+            <li><a href="#life-cycle">7. Общий жизненный цикл (Схема)</a></li>
+        </ul>
+    </nav>
+
+    <!-- СЕКЦИЯ 1: ВЕГЕТАТИВНОЕ РАЗМНОЖЕНИЕ -->
+    <section id="vegetative" class="animate">
+        <div class="grid-2">
+            <div class="card">
+                <h2>1. Вегетативное размножение растений</h2>
+                <p><strong>Вегетативное размножение</strong> — это размножение с помощью вегетативных органов (корня, стебля, листа). В основе лежит способность растений к регенерации.</p>
+                
+                <h3>Размножение надземными побегами</h3>
+                <ul>
+                    <li><strong>Усами (столонами):</strong> У земляники, клубники, лютика ползучего. В узлах образуются боковые почки и придаточные корни.</li>
+                    <li><strong>Отводками:</strong> Ветви прижимают к земле и присыпают. После укоренения отделяют (смородина, крыжовник).</li>
+                    <li><strong>Стеблевыми черенками:</strong> Отрезанный участок побега с 2-3 узлами (виноград, смородина, ива, тополь).</li>
+                    <li><strong>Листовыми черенками:</strong> Целый лист или его часть (сенполия, бегония, сансевьера).</li>
+                </ul>
+
+                <h3>Размножение подземными побегами</h3>
+                <ul>
+                    <li><strong>Корневищами:</strong> Ирис, ландыш, пырей, мята.</li>
+                    <li><strong>Клубнями:</strong> Картофель, топинамбур. Размножают целыми клубнями или их частями с глазками.</li>
+                    <li><strong>Луковицами:</strong> Лук, чеснок, тюльпаны, нарциссы.</li>
+                    <li><strong>Клубнелуковицами:</strong> Гладиолус, крокус.</li>
+                </ul>
+
+                <h3>Размножение корнями</h3>
+                <ul>
+                    <li><strong>Корневыми клубнями:</strong> Георгины (нужно брать с основанием стебля, несущим почки).</li>
+                    <li><strong>Корневыми черенками:</strong> Отрезки боковых корней (хрен, малина, вишня, одуванчик).</li>
+                    <li><strong>Корневыми отпрысками:</strong> Побеги из придаточных почек на корнях (сирень, осина, осот).</li>
+                </ul>
+            </div>
+            
+            <aside class="sidebar">
+                <h4>Почему это выгодно?</h4>
+                <p>Вегетативное размножение позволяет быстро получить много потомков, полностью сохраняющих признаки материнского растения (клоны). Это важно для сельского хозяйства (сохранение ценных сортов).</p>
+                <hr style="border: 1px dashed var(--accent-light); margin: 15px 0;">
+                <h4>Фрагментация</h4>
+                <p>Разделение особи на части, каждая из которых регенерирует в новую особь. Характерно для водорослей (элодея) и некоторых животных (дождевой червь).</p>
+            </aside>
+        </div>
+    </section>
+
+    <div class="divider">❦ ❦ ❦</div>
+
+    <!-- СЕКЦИЯ 2: ПРИВИВКИ И КУЛЬТУРА ТКАНЕЙ -->
+    <section id="grafting" class="animate">
+        <div class="grid-2">
+            <div class="card">
+                <h2>2. Прививки и Культура тканей</h2>
+                
+                <h3>Прививка (Трансплантация)</h3>
+                <p>Искусственное сращивание части одного растения с побегом другого.</p>
+                <ul>
+                    <li><strong>Привой:</strong> Черенок или почка (глазок), которые прививают.</li>
+                    <li><strong>Подвой:</strong> Растение (или его часть), к которому прививают.</li>
+                </ul>
+                <p><em>Виды прививок:</em></p>
+                <ul>
+                    <li><strong>Окулировка:</strong> Прививка почки-глазка за кору (Т-образный разрез).</li>
+                    <li><strong>Копулировка:</strong> Косые срезы привоя и подвоя совмещают (если они одинаковой толщины).</li>
+                    <li><strong>В расщеп (в полурасщеп):</strong> Привой вставляют в расщеп подвоя.</li>
+                    <li><strong>Под кору:</strong> Привой вставляют под отогнутую кору подвоя.</li>
+                </ul>
+                <p><strong>Значение:</strong> Сохранение сорта, ускорение плодоношения, морозоустойчивость, омоложение деревьев.</p>
+
+                <h3>Культура тканей (Микроклональное размножение)</h3>
+                <p>Рост клеток и тканей на искусственных питательных средах.</p>
+                <ul>
+                    <li>Основано на свойстве <strong>тотипотентности</strong> — способности любой растительной клетки развиться в целое растение.</li>
+                    <li>Используется для получения <strong>клонов</strong> ценных сортов и оздоровления посадочного материала от вирусов.</li>
+                </ul>
+            </div>
+            
+            <aside class="sidebar">
+                <h4>Тотипотентность</h4>
+                <p>Это уникальное свойство растительных клеток. В отличие от животных, где клетки узкоспециализированы, клетка растения (например, из кусочка листа) при добавлении определенных фитогормонов может "вспомнить" свое начало и вырасти в целое растение.</p>
+            </aside>
+        </div>
+    </section>
+
+    <div class="divider">❦ ❦ ❦</div>
+
+    <!-- СЕКЦИЯ 3: МИКРОСПОРОГЕНЕЗ -->
+    <section id="microsporogenesis" class="animate">
+        <div class="grid-2">
+            <div class="card">
+                <h2>3. Мужская репродуктивная сфера (Микроспорогенез)</h2>
+                <p>Происходит в пыльниках тычинок.</p>
+                
+                <div class="step-box">
+                    <span class="step-number">1</span>
+                    <strong>Образование микроспороцитов:</strong> В гнездах пыльника (микроспорангиях) образуются диплоидные материнские клетки микроспор (микроспороциты) — 2n2c.
+                </div>
+                <div class="step-box">
+                    <span class="step-number">2</span>
+                    <strong>Мейоз:</strong> Каждый микроспороцит делится мейозом, образуя 4 гаплоидные микроспоры (n1c). Они одеты двумя оболочками: экзиной (наружная, со спорополленином) и интиной (внутренняя).
+                </div>
+                <div class="step-box">
+                    <span class="step-number">3</span>
+                    <strong>Микрогаметогенез:</strong> Ядро микроспоры делится митозом. Образуется пыльцевое зерно (мужской гаметофит), состоящее из двух клеток:
+                    <ul>
+                        <li><strong>Вегетативная (сифоногенная) клетка:</strong> Большая, формирует пыльцевую трубку.</li>
+                        <li><strong>Генеративная (спермиогенная) клетка:</strong> Маленькая, позже делится митозом, образуя два спермия.</li>
+                    </ul>
+                </div>
+                <p><strong>Пыльцевое зерно</strong> — это эндоспорический мужской гаметофит (развивается внутри оболочки споры).</p>
+            </div>
+            
+            <aside class="sidebar">
+                <h4>Апертуры</h4>
+                <p>Это участки на поверхности пыльцевого зерна, где отсутствует экзина (есть только интина). Через них прорастает пыльцевая трубка.</p>
+                <p>Однодольные обычно имеют одну апертуру (борозду или пору). Эвдикоты (двудольные) — чаще три апертуры (триколпатные).</p>
+                <hr style="border: 1px dashed var(--accent-light); margin: 15px 0;">
+                <h4>Палинология</h4>
+                <p>Наука о пыльце и спорах. Спорово-пыльцевой анализ используется в палеонтологии и криминалистике.</p>
+            </aside>
+        </div>
+    </section>
+
+    <div class="divider">❦ ❦ ❦</div>
+
+    <!-- СЕКЦИЯ 4: МЕГАСПОРОГЕНЕЗ -->
+    <section id="megasporogenesis" class="animate">
+        <div class="grid-2">
+            <div class="card">
+                <h2>4. Женская репродуктивная сфера (Мегаспорогенез)</h2>
+                <p>Происходит в семязачатке (семяпочке) внутри завязи пестика.</p>
+
+                <h3>Строение семязачатка</h3>
+                <ul>
+                    <li><strong>Нуцеллус (мегаспорангий):</strong> Центральная часть.</li>
+                    <li><strong>Интегументы:</strong> Покровы (обычно два).</li>
+                    <li><strong>Микропиле:</strong> Отверстие на верхушке (пыльцевход).</li>
+                    <li><strong>Халаза:</strong> Противоположный микропиле полюс, где сходятся интегументы.</li>
+                    <li><strong>Семяножка (фуникулус):</strong> Прикрепляет семязачаток к плаценте.</li>
+                </ul>
+
+                <h3>Развитие женского гаметофита</h3>
+                <div class="step-box">
+                    <span class="step-number">1</span>
+                    В нуцеллусе обособляется <strong>мегаспороцит</strong> (2n).
+                </div>
+                <div class="step-box">
+                    <span class="step-number">2</span>
+                    <strong>Мейоз:</strong> Образуется 4 гаплоидные мегаспоры. Три из них (обычно ближе к микропиле) отмирают. Одна (на халазальном полюсе) остается.
+                </div>
+                <div class="step-box">
+                    <span class="step-number">3</span>
+                    <strong>Митоматические деления:</strong> Ядро мегаспоры делится трижды (без цитокинеза). Образуется 8-ядерный <strong>зародышевый мешок</strong>.
+                </div>
+
+                <h3>Структура зрелого зародышевого мешка</h3>
+                <ul>
+                    <li><strong>Яйцеклетка (n):</strong> На микропилярном полюсе.</li>
+                    <li><strong>Синергиды (2 шт, n):</strong> По бокам от яйцеклетки. Направляют рост пыльцевой трубки.</li>
+                    <li><strong>Антиподы (3 шт, n):</strong> На халазальном полюсе (функция неясна).</li>
+                    <li><strong>Центральная клетка (2n):</strong> В центре, содержит два полярных ядра (сливаются до или во время оплодотворения).</li>
+                </ul>
+            </div>
+            
+            <aside class="sidebar">
+                <h4>Почему 8 ядер, но 7 клеток?</h4>
+                <p>После трех митозов образуется 8 ядер. Затем происходит клеточное деление: на полюсах формируются по 3 клетки (яйцеклетка + 2 синергиды, и 3 антиподы). А два ядра в центре не разделяются цитоплазмой, образуя одну большую центральную клетку с двумя ядрами (или одним диплоидным).</p>
+            </aside>
+        </div>
+    </section>
+
+    <div class="divider">❦ ❦ ❦</div>
+
+    <!-- СЕКЦИЯ 5: ДВОЙНОЕ ОПЛОДОТВОРЕНИЕ -->
+    <section id="double-fert" class="animate">
+        <div class="card">
+            <h2>5. Опыление и Двойное оплодотворение</h2>
+            <p><strong>Опыление</strong> — перенос пыльцевого зерна на рыльце пестика (ветром, насекомыми, водой, самоопыление).</p>
+
+            <h3>Механизм двойного оплодотворения (Открыто С.Г. Навашиным)</h3>
+            <div class="step-box">
+                <span class="step-number">1</span>
+                Пыльцевое зерно попадает на рыльце. <strong>Вегетативная клетка</strong> прорастает, образуя пыльцевую трубку, которая растет сквозь столбик к завязи.
+            </div>
+            <div class="step-box">
+                <span class="step-number">2</span>
+                <strong>Генеративная клетка</strong> делится митозом, образуя <strong>два спермия</strong> (n).
+            </div>
+            <div class="step-box">
+                <span class="step-number">3</span>
+                Пыльцевая трубка проникает в зародышевый мешок через микропиле и <strong>синергиду</strong> (она разрушается).
+            </div>
+            <div class="step-box">
+                <span class="step-number">4</span>
+                <strong>Первое слияние:</strong> Один спермий (n) сливается с яйцеклеткой (n) → Зигота (2n). Из нее разовьется <strong>зародыш</strong>.
+            </div>
+            <div class="step-box">
+                <span class="step-number">5</span>
+                <strong>Второе слияние:</strong> Второй спермий (n) сливается с центральной клеткой (2n) → <strong>Триплоидная клетка (3n)</strong>. Из нее разовьется <strong>вторичный эндосперм</strong> (питательная ткань).
+            </div>
+
+            <div class="formula">
+                Спермий (n) + Яйцеклетка (n) = Зигота (2n) → Зародыш<br><br>
+                Спермий (n) + Центральная клетка (2n) = Эндосперм (3n)
+            </div>
+        </div>
+    </section>
+
+    <div class="divider">❦ ❦ ❦</div>
+
+    <!-- СЕКЦИЯ 6: РАЗВИТИЕ СЕМЕНИ И ПЛОДА -->
+    <section id="seed-dev" class="animate">
+        <div class="grid-2">
+            <div class="card">
+                <h2>6. Развитие семени и плода</h2>
+                <p>После оплодотворения части цветка претерпевают изменения:</p>
+                <table>
+                    <tr>
+                        <th>Часть цветка до оплодотворения</th>
+                        <th>Структура после оплодотворения</th>
+                    </tr>
+                    <tr>
+                        <td>Стенка завязи</td>
+                        <td><strong>Околоплодник (перикарпий)</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Семязачаток</td>
+                        <td><strong>Семя</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Интегументы</td>
+                        <td>Семенная кожура</td>
+                    </tr>
+                    <tr>
+                        <td>Нуцеллус</td>
+                        <td>Перисперм (остатки, если не поглощены)</td>
+                    </tr>
+                    <tr>
+                        <td>Центральная клетка</td>
+                        <td>Эндосперм (3n)</td>
+                    </tr>
+                    <tr>
+                        <td>Зигота</td>
+                        <td>Зародыш</td>
+                    </tr>
+                </table>
+
+                <h3>Типы семян по запасанию веществ</h3>
+                <ul>
+                    <li><strong>С эндоспермом:</strong> Пшеница, хурма (запас в 3n эндосперме).</li>
+                    <li><strong>С семядолями:</strong> Фасоль, горох, подсолнечник (запас в зародыше).</li>
+                    <li><strong>С периспермом:</strong> Гвоздичные, маревые (запас в остатках нуцеллуса).</li>
+                </ul>
+            </div>
+            
+            <aside class="sidebar">
+                <h4>Арилус</h4>
+                <p>Сочный вырост семяножки (фуникулуса). Образуется у некоторых растений.</p>
+                <p>Примеры: Бересклет (яркая оранжевая "шляпка" на семени), личи (съедобная мякоть — это арилус), дуриан.</p>
+            </aside>
+        </div>
+    </section>
+
+    <div class="divider">❦ ❦ ❦</div>
+
+    <!-- СЕКЦИЯ 7: ОБЩАЯ СХЕМА ЦИКЛА -->
+    <section id="life-cycle" class="animate">
+        <div class="card">
+            <h2>7. Общий жизненный цикл Покрытосеменных (Резюме)</h2>
+            <p>Доминирующая стадия — диплоидный <strong>спорофит</strong> (само растение).</p>
+            
+            <div class="formula" style="text-align: left; padding: 20px;">
+                <strong>Спорофит (2n)</strong> <br>
+                ├── Тычинка (микроспорангий) → Мейоз → Микроспоры (n) → Пыльцевое зерно (мужской гаметофит)<br>
+                │&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── Вегетативная клетка + Генеративная клетка → 2 Спермия (n)<br>
+                │<br>
+                └── Пестик (семязачаток) <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;├── Нуцеллус → Мейоз → Мегаспоры (n) → Зародышевый мешок (женский гаметофит)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── 8 ядер → Яйцеклетка (n) + Синергиды + Антиподы + Центральная клетка (2n)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;│<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;└── Двойное оплодотворение<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── Спермий + Яйцеклетка = Зигота (2n) → Зародыш<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── Спермий + Центральная клетка = Эндосперм (3n)<br>
+                <br>
+                <strong>Семя</strong> (Зародыш + Эндосперм + Кожура) → Прорастание → Новый Спорофит (2n)
+            </div>
+        </div>
+    </section>
+
+    <div class="header-title" style="margin-top: 60px; padding: 20px;">
+        <h2 style="margin: 0; font-size: 1.5em;">Конец четвертой части</h2>
+        <p style="margin-top: 10px; font-size: 1em;">Ты прошел огромный путь! Если нужны еще разделы (например, Эволюция, Экология или Ботаника продвинутого уровня), пиши <strong>«дальше»</strong>.</p>
+    </div>
+
+</div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Биология: Большой конспект (Часть 5 - Систематика и Морфология)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #fcf9f5;
+            --bg-card: #f4ebe2;
+            --bg-sidebar: #e8dbcd;
+            --text-main: #4a3b32;
+            --text-muted: #7a6558;
+            --accent-coffee: #a67c63;
+            --accent-light: #d4b8a5;
+            --accent-green: #9cb39a;
+            --accent-blue: #9cafc4;
+            --accent-pink: #d4a5a5;
+            --border-radius: 16px;
+            --shadow: 0 10px 30px rgba(166, 124, 99, 0.1);
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Lora', serif;
+            color: var(--accent-coffee);
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header-title {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--bg-card), var(--bg-main));
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--accent-light);
+        }
+
+        .header-title h1 {
+            font-size: 3em;
+            margin: 0 0 10px 0;
+            letter-spacing: 2px;
+        }
+
+        .header-title p {
+            color: var(--text-muted);
+            font-size: 1.2em;
+            margin: 0;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            border-left: 6px solid var(--accent-coffee);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            border-bottom: 2px dashed var(--accent-light);
+            padding-bottom: 10px;
+        }
+
+        .card h3 {
+            color: var(--text-main);
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .sidebar {
+            background-color: var(--bg-sidebar);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: inset 0 0 15px rgba(255,255,255,0.5), var(--shadow);
+            border: 1px solid #d8c5b6;
+            position: relative;
+            height: fit-content;
+        }
+
+        .sidebar::before {
+            content: "🌸";
+            font-size: 2em;
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: var(--bg-main);
+            padding: 0 10px;
+            border-radius: 50%;
+            box-shadow: var(--shadow);
+        }
+
+        .sidebar h4 {
+            margin-top: 10px;
+            color: #8c624a;
+            font-size: 1.2em;
+        }
+
+        .sidebar p {
+            font-size: 0.95em;
+            color: #5a493f;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        th, td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--bg-card);
+        }
+
+        th {
+            background-color: var(--bg-card);
+            color: var(--accent-coffee);
+            font-family: 'Lora', serif;
+            font-weight: 600;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .formula {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-coffee);
+            font-family: 'Lora', serif;
+            font-style: italic;
+            text-align: center;
+            font-size: 1.2em;
+            margin: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #fcebe2 0%, #fcebe2 100%);
+            padding: 0 5px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #b05a3a;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        .toc {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+        }
+        .toc h2 { margin-top: 0; text-align: center; }
+        .toc ul { list-style-type: none; padding: 0; columns: 2; column-gap: 40px; }
+        .toc li { margin-bottom: 10px; }
+        .toc a {
+            color: var(--text-main);
+            text-decoration: none;
+            transition: color 0.3s;
+            display: block;
+            padding: 5px 10px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.5);
+        }
+        .toc a:hover { color: var(--accent-coffee); background: #fff; padding-left: 15px; }
+
+        .divider {
+            text-align: center;
+            font-size: 2em;
+            color: var(--accent-light);
+            margin: 40px 0;
+            letter-spacing: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr; }
+            .toc ul { columns: 1; }
+            .header-title h1 { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header class="header-title animate">
+        <h1>Биология: Полный курс</h1>
+        <p>Конспекты, схемы и разбор сложных тем в кофейно-пастельных тонах</p>
+        <p style="font-size: 0.9em; margin-top: 15px;">Часть 5: Систематика APG, Морфология цветка и Карпология</p>
+    </header>
+
+    <nav class="toc animate">
+        <h2>Оглавление (Часть 5)</h2>
+        <ul>
+            <li><a href="#apg">1. Систематика APG</a></li>
+            <li><a href="#androecium">2. Андроцей (Детально)</a></li>
+            <li><a href="#gynoecium">3. Гинецей и Типы Плацентации</a></li>
+            <li><a href="#pollen">4. Пыльцевое зерно (Палинология)</a></li>
+            <li><a href="#fruit-classification">5. Карпология (Классификация плодов)</a></li>
+            <li><a href="#families">6. Обзор основных семейств</a></li>
+        </ul>
+    </nav>
+
+    <!-- СЕКЦИЯ 1: APG -->
+    <section id="apg" class="animate">
+        <div class="grid-2">
+            <div class="card">
+                <h2>1. Систематика APG (Angiosperm Phylogeny Group)</h2>
+                <p>Современная система, основанная на молекулярных (ДНК) данных. Отказались от деления на классы Однодольные и Двудольные в старом понимании (так как Двудольные — парафилетическая группа).</p>
+                
+                <h3>Основные клады</h3>
+                <ul>
+                    <li><strong>Базальные покрытосеменные (ANA grade):</strong> Амбарелловые, Нимфейные (кувшинки), Австробэйлиевые (лимонник).</li>
+                    <li><strong>Магнолииды:</strong> Магнолиевые, Лавровые, Перцевые.</li>
+                    <li><strong>Монокоты (Однодольные):</strong> Монофилетическая группа (злаки, орхидеи, пальмы).</li>
+                    <li><strong>Эвдикоты (Настоящие двудольные):</strong>
+                        <ul>
+                            <li><em>Ранкулиды:</em> Лютиковые, Маковые, Лотос.</li>
+                            <li><em>Розиды:</em> Розоцветные, Бобовые, Капустные, Мальвовые.</li>
+                            <li><em>Астериды:</em> Сложноцветные, Зонтичные, Пасленовые, Губоцветные.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p><em>Особый случай:</em> Роголистник (Ceratophyllum) — его положение неясно, считается базальным для настоящих двудольных.</p>
+            </div>
+            
+            <aside class="sidebar">
+                <h4>Почему отказались от старой системы?</h4>
+                <p>Раньше делили на Двудольные и Однодольные по количеству семядолей и жилкованию. Но молекулярный анализ показал, что некоторые "двудольные" (например, кувшинки) ближе к однодольным, чем к другим двудольным. Поэтому ввели клады (группы, включающие всех потомков общего предка).</p>
+            </aside>
+        </div>
+    </section>
+
+    <div class="divider">❦ ❦ ❦</div>
+
+    <!-- СЕКЦИЯ 2: АНДРОЦЕЙ -->
+    <section id="androecium" class="animate">
+        <div class="grid-2">
+            <div class="card">
+                <h2>2. Андроцей (Детально)</h2>
+                <p><strong>Андроцей</strong> — совокупность тычинок (микроспорофиллов) в цветке.</p>
+                
+                <h3>Строение тычинки</h3>
+                <ul>
+                    <li><strong>Тычиночная нить:</strong> Стерильная часть. Если отсутствует — тычинка сидячая.</li>
+                    <li><strong>Пыльник (фертильная часть):</strong> Состоит из двух половинок (тек), соединенных связником.</li>
+                    <li>В каждой теке по два гнезда (микроспорангия). Итого в пыльнике 4 гнезда.</li>
+                    <li>Совокупность сросшихся спорангиев в пыльнике — <strong>синангий</strong> (в отличие от соруса папоротников).</li>
+                </ul>
+
+                <h3>Срастание тычинок</h3>
+                <ul>
+                    <li><strong>Двубратственный андроцей:</strong> 9 тычинок срастаются в трубку, 1 свободна (характерно для бобовых — мотыльковый венчик).</li>
+                    <li><strong>Одноюратственный:</strong> Все тычинки срастаются (например, у мальвовых).</li>
+                </ul>
+
+                <h3>Вскрывание пыльника</h3>
+                <ul>
+                    <li><strong>Продольной щелью:</strong> Самый распространенный способ.</li>
+                    <li><strong>Порами:</strong> На верхушке пыльника (вересковые, пасленовые).</li>
+                    <li><strong>Клапанами:</strong> Отгибаются небольшие участки (барбарис).</li>
+                </ul>
+            </div>
+            
+            <aside class="sidebar">
+                <h4>Как записать в формуле?</h4>
+                <p>Если 9 тычинок срослись, а 1 свободна: <strong>A(9)+1</strong>.</p>
+                <p>Если учитывать круги (например, у бобовых): <strong>A(9)+1</strong> или <strong>A(10)</strong>, если все 10 срослись.</p>
+            </aside>
+        </div>
+    </section>
+
+    <div class="divider">❦ ❦ ❦</div>
+
+    <!-- СЕКЦИЯ 3: ГИНЕЦЕЙ -->
+    <section id="gynoecium" class="animate">
+        <div class="card">
+            <h2>3. Гинецей и Типы Плацентации</h2>
+            <p><strong>Гинецей</strong> — совокупность плодолистиков (мегаспорофиллов). Плодолистик гомологичен листу.</p>
+            
+            <h3>Типы гинецея по числу и срастанию</h3>
+            <table>
+                <tr>
+                    <th>Тип гинецея</th>
+                    <th>Описание</th>
+                    <th>Плацентация (прикрепление семязачатков)</th>
+                    <th>Примеры</th>
+                </tr>
+                <tr>
+                    <td><strong>Мономерный (Монокарпный)</strong></td>
+                    <td>Состоит из одного плодолистика.</td>
+                    <td>Краевая (маргинальная) — вдоль брюшного шва.</td>
+                    <td>Бобовые (горох, фасоль), род Prunus (слива, вишня).</td>
+                </tr>
+                <tr>
+                    <td><strong>Апокарпный</strong></td>
+                    <td>Несколько плодолистиков, но они НЕ срастаются.</td>
+                    <td>Краевая (каждый плодолистик отдельно).</td>
+                    <td>Малина, пион, лютик, клубника (плодики на цветоложе).</td>
+                </tr>
+                <tr>
+                    <td><strong>Ценокарпный</strong></td>
+                    <td>Плодолистики срастаются завязями.</td>
+                    <td>Различают 3 подтипа (см. ниже).</td>
+                    <td>Тюльпан, томат, мак, гвоздика.</td>
+                </tr>
+            </table>
+
+            <h3>Классификация ценокарпного гинецея (по А.Л. Тахтаджяну)</h3>
+            <ul>
+                <li><strong>Синкарпный:</strong> Плодолистики срастаются боковыми стенками. Образуются перегородки (гнезда). <em>Плацентация центрально-угловая (аксиальная).</em> Примеры: цитрусовые, пасленовые (томат, картофель), лилейные, яблоня. 
+                    <br><em>Особый случай — Ценобий:</em> Ложночетырехгнездный плод (дополнительная перегородка), распадается на 4 эрема. Характерен для Бурачниковых и Яснотковых (губоцветных).
+                </li>
+                <li><strong>Паракарпный:</strong> Плодолистики срастаются только краями. Одно общее гнездо. <em>Плацентация постенная (париетальная) — на стенках.</em> Примеры: тыквенные (огурец, арбуз), маковые, капустные, крыжовник, орхидные.</li>
+                <li><strong>Лизикарпный:</strong> Производный от синкарпного. Перегородки растворяются (лизируются), образуется одно гнездо с центральной колонкой. <em>Плацентация колончатая (свободно-центральная).</em> Примеры: гвоздичные, первоцветные.</li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="divider">❦ ❦ ❦</div>
+
+    <!-- СЕКЦИЯ 4: ПЫЛЬЦА -->
+    <section id="pollen" class="animate">
+        <div class="grid-2">
+            <div class="card">
+                <h2>4. Пыльцевое зерно (Палинология)</h2>
+                <p>Мужской гаметофит семенных растений.</p>
+                
+                <h3>Оболочки</h3>
+                <ul>
+                    <li><strong>Экзина:</strong> Наружная, толстая, из спорополленина (очень устойчивый полимер). Скульптурированная.</li>
+                    <li><strong>Интина:</strong> Внутренняя, тонкая, целлюлозная.</li>
+                    <li><strong>Апертуры:</strong> Места, где нет экзины (только интина). Через них выходит пыльцевая трубка.</li>
+                </ul>
+
+                <h3>Разнообразие апертур (систематический признак)</h3>
+                <ul>
+                    <li><strong>Однодольные (Monocots):</strong> Одна апертура (борозда или пора). Например, у злаков — круглая пора, у лилейных — вытянутая борозда.</li>
+                    <li><strong>Эвдикоты (Eudicots):</strong> Базовое число — 3 апертуры (триколпатные). Например, береза, сложноцветные.</li>
+                    <li>Бывает безапертурная пыльца (у водных растений).</li>
+                </ul>
+            </div>
+            
+            <aside class="sidebar">
+                <h4>Спорополленин</h4>
+                <p>Это уникальный полимер, который не переваривается. Благодаря ему пыльца прекрасно сохраняется в геологических породах миллионы лет. Именно по пыльце палеонтологи восстанавливают древние климаты (спорово-пыльцевой анализ).</p>
+            </aside>
+        </div>
+    </section>
+
+    <div class="divider">❦ ❦ ❦</div>
+
+    <!-- СЕКЦИЯ 5: ПЛОДЫ -->
+    <section id="fruit-classification" class="animate">
+        <div class="card">
+            <h2>5. Карпология (Классификация плодов)</h2>
+            <p><strong>Плод</strong> — развивается из завязи. Околоплодник = Экзокарпий (наружный) + Мезокарпий (средний) + Эндокарпий (внутренний).</p>
+            <p><em>Важно:</em> Косточка — это всегда одревесневший эндокарпий. Нельзя называть семена косточками!</p>
+            
+            <h3>I. Апокарпные плоды (из несросшихся плодолистиков)</h3>
+            <ul>
+                <li><strong>Мономерные (из 1 плодолистика):</strong>
+                    <ul>
+                        <li><em>Костянка:</em> Сочный мезокарпий, деревянистый эндокарпий. Слива, вишня, миндаль (сухая костянка).</li>
+                        <li><em>Орешек:</em> Одревесневший околоплодник. Манжетка.</li>
+                        <li><em>Листовка:</em> Многосеменной, вскрывается по брюшному шву. Ваточник, живокость.</li>
+                        <li><em>Боб:</em> Вскрывается по двум швам (брюшному и спинному). Только у Бобовых (горох, арахис).</li>
+                    </ul>
+                </li>
+                <li><strong>Полимерные (сборные):</strong>
+                    <ul>
+                        <li><em>Многоорешек:</em> Гравилат, лютик, земляника (орешки на сочном цветоложе — земляничина/фрага).</li>
+                        <li><em>Многолистовка:</em> Пион, бадьян, магнолия.</li>
+                        <li><em>Многокостянка:</em> Малина, ежевика, морошка.</li>
+                        <li><em>Цинарродий:</em> Орешки внутри вогнутого сочного гипантия (шиповник).</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>II. Ценокарпные плоды (из сросшихся плодолистиков)</h3>
+            <table>
+                <tr>
+                    <th>Тип</th>
+                    <th>Характеристика</th>
+                    <th>Примеры</th>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: center; background: var(--bg-card); font-weight: bold;">СОЧНЫЕ МНОГОСЕМЕННЫЕ</td>
+                </tr>
+                <tr>
+                    <td><strong>Ягода</strong></td>
+                    <td>Полностью сочный околоплодник.</td>
+                    <td>Томат, черника, виноград, картофель.</td>
+                </tr>
+                <tr>
+                    <td><strong>Тыквина</strong></td>
+                    <td>Нижняя паракарпная ягода. Твердый экзокарпий.</td>
+                    <td>Огурец, арбуз, дыня, тыква.</td>
+                </tr>
+                <tr>
+                    <td><strong>Гесперидий (Померанец)</strong></td>
+                    <td>Верхняя синкарпная ягода. Флаведо (цедра), альбедо (белое), эндокарпий с соковыми мешочками.</td>
+                    <td>Апельсин, лимон, мандарин.</td>
+                </tr>
+                <tr>
+                    <td><strong>Яблоко</strong></td>
+                    <td>Ложный плод (участвует цветочная трубка). Эндокарпий пленчатый.</td>
+                    <td>Яблоня, груша, рябина.</td>
+                </tr>
+                <tr>
+                    <td><strong>Перинарий</strong></td>
+                    <td>Похож на костянку, но из нескольких плодолистиков (несколько косточек).</td>
+                    <td>Кизил (2 косточки), плющ (до 5).</td>
+                </tr>
+                <tr>
+                    <td><strong>Гранатина</strong></td>
+                    <td>Нижняя синкарпная коробочка, сочная семенная кожура.</td>
+                    <td>Гранат.</td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: center; background: var(--bg-card); font-weight: bold;">СУХИЕ МНОГОСЕМЕННЫЕ (ВСКРЫВАЮЩИЕСЯ)</td>
+                </tr>
+                <tr>
+                    <td><strong>Коробочка</strong></td>
+                    <td>Вскрывается створками, зубцами, крышечкой.</td>
+                    <td>Мак, тюльпан, хлопчатник, белена (крыночка).</td>
+                </tr>
+                <tr>
+                    <td><strong>Стручок / Стручочек</strong></td>
+                    <td>Две створки, ложная перегородка (реплум).</td>
+                    <td>Капуста, редис, пастушья сумка.</td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: center; background: var(--bg-card); font-weight: bold;">СУХИЕ ОДНОСЕМЕННЫЕ</td>
+                </tr>
+                <tr>
+                    <td><strong>Орех</strong></td>
+                    <td>Деревянистый околоплодник (цинокарпный).</td>
+                    <td>Лещина, дуб (желудь).</td>
+                </tr>
+                <tr>
+                    <td><strong>Семянка</strong></td>
+                    <td>Кожистый околоплодник, не срастается с семенем.</td>
+                    <td>Подсолнечник, одуванчик (Астровые).</td>
+                </tr>
+                <tr>
+                    <td><strong>Зерновка</strong></td>
+                    <td>Околоплодник срастается с семенной кожурой.</td>
+                    <td>Пшеница, кукуруза, рис (Злаки).</td>
+                </tr>
+                <tr>
+                    <td><strong>Крылатка</strong></td>
+                    <td>Семянка с крылом.</td>
+                    <td>Вяз, ясень, клен (двукрылатка).</td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: center; background: var(--bg-card); font-weight: bold;">ДРОБНЫЕ ПЛОДЫ</td>
+                </tr>
+                <tr>
+                    <td><strong>Ценобий</strong></td>
+                    <td>Распадается на 4 эрема.</td>
+                    <td>Яснотковые (мята, шалфей), Бурачниковые.</td>
+                </tr>
+                <tr>
+                    <td><strong>Вислоплодник</strong></td>
+                    <td>Распадается на 2 мерикарпия, висящих на карпофоре.</td>
+                    <td>Зонтичные (укроп, морковь, тмин).</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <div class="divider">❦ ❦ ❦</div>
+
+    <!-- СЕКЦИЯ 6: СЕМЕЙСТВА -->
+    <section id="families" class="animate">
+        <div class="grid-2">
+            <div class="card">
+                <h2>6. Обзор основных семейств</h2>
+                
+                <h3>Класс Двудольные</h3>
+                
+                <h4>Крестоцветные (Капустные) - Brassicaceae</h4>
+                <ul>
+                    <li>Формула: <strong>*Ca2+2Co4A2+4G(2)</strong></li>
+                    <li>Лепестки расположены крестом. Тычинок 6 (2 короткие, 4 длинные).</li>
+                    <li>Соцветие: Кисть.</li>
+                    <li>Плод: Стручок или стручочек.</li>
+                    <li>Представители: Капуста, редис, горчица, сурепка, пастушья сумка.</li>
+                </ul>
+
+                <h4>Розоцветные - Rosaceae</h4>
+                <ul>
+                    <li>Формула: <strong>*Ca5Co5A∞G∞</strong> или <strong>*Ca5Co5A∞G1</strong></li>
+                    <li>Околоцветник двойной, пятичленный. Много тычинок. Часто есть подчашие (земляника, шиповник).</li>
+                    <li>Плоды очень разнообразны: яблоко, костянка, многокостянка, многоорешек.</li>
+                    <li>Представители: Яблоня, вишня, малина, земляника, шиповник, лапчатка.</li>
+                </ul>
+
+                <h4>Бобовые (Мотыльковые) - Fabaceae</h4>
+                <ul>
+                    <li>Формула: <strong>↑Ca(5)Co1+2+(2)A(9)+1G1</strong></li>
+                    <li>Венчик мотылькового типа (парус, весла, лодочка).</li>
+                    <li>Тычинок 10 (9 сросшихся + 1 свободная).</li>
+                    <li>Плод: Боб. На корнях клубеньки с азотфиксирующими бактериями.</li>
+                    <li>Представители: Горох, фасоль, клевер, люпин, люцерна, акация.</li>
+                </ul>
+
+                <h4>Пасленовые - Solanaceae</h4>
+                <ul>
+                    <li>Формула: <strong>*Ca(5)Co(5)A5G(2)</strong></li>
+                    <li>Околоцветник сростнолистный. Тычинки прирастают к трубке венчика.</li>
+                    <li>Плод: Ягода или коробочка. Содержат алкалоиды (ядовиты).</li>
+                    <li>Представители: Картофель, томат, перец, баклажан, табак, белена.</li>
+                </ul>
+
+                <h4>Астровые (Сложноцветные) - Asteraceae</h4>
+                <ul>
+                    <li>Соцветие: Корзинка (окружена оберткой).</li>
+                    <li>Цветки: Трубчатые, язычковые, ложноязычковые, воронковидные.</li>
+                    <li>Формула трубчатого: <strong>*Ca0Co(5)A(5)G1</strong></li>
+                    <li>Плод: Семянка. Чашечка видоизменена в хохолок (парашютик).</li>
+                    <li>Представители: Подсолнечник, ромашка, одуванчик, василек, полынь.</li>
+                </ul>
+
+                <h3>Класс Однодольные</h3>
+
+                <h4>Злаковые (Мятликовые) - Poaceae</h4>
+                <ul>
+                    <li>Стебель — соломина (полый, с узлами). Вставочный рост.</li>
+                    <li>Цветок: Околоцветник редуцирован до пленочек (лодикул).</li>
+                    <li>Формула: <strong>↑O(2)+2A3G1</strong> (например, у ржи).</li>
+                    <li>Соцветие: Сложный колос, метелка, початок (у кукурузы раздельнополые).</li>
+                    <li>Плод: Зерновка.</li>
+                    <li>Представители: Пшеница, рожь, кукуруза, рис, бамбук, пырей.</li>
+                </ul>
+
+                <h4>Лилейные - Liliaceae</h4>
+                <ul>
+                    <li>Формула: <strong>*P3+3A3+3G(3)</strong></li>
+                    <li>Околоцветник простой, венчиковидный (6 листочков).</li>
+                    <li>Тычинок 6, пестик 1 (из 3 плодолистиков).</li>
+                    <li>Плод: Коробочка или ягода.</li>
+                    <li>Подземные органы: Луковица, корневище, клубнелуковица.</li>
+                    <li>Представители: Лук, чеснок, тюльпан, лилия, ландыш, гиацинт.</li>
+                </ul>
+            </div>
+            
+            <aside class="sidebar">
+                <h4>Как читать формулу?</h4>
+                <p><strong>*</strong> — правильный (актиноморфный)</p>
+                <p><strong>↑</strong> — неправильный (зигоморфный)</p>
+                <p><strong>Ca</strong> — чашечка (Calyx)</p>
+                <p><strong>Co</strong> — венчик (Corolla)</p>
+                <p><strong>P</strong> — простой околоцветник (Perigonium)</p>
+                <p><strong>A</strong> — андроцей (тычинки)</p>
+                <p><strong>G</strong> — гинецей (пестики)</p>
+                <p>Скобки () означают срастание частей.</p>
+                <p>Черта под G — верхняя завязь, над G — нижняя.</p>
+            </aside>
+        </div>
+    </section>
+
+    <div class="header-title" style="margin-top: 60px; padding: 20px;">
+        <h2 style="margin: 0; font-size: 1.5em;">Конец пятой части</h2>
+        <p style="margin-top: 10px; font-size: 1em;">Напиши <strong>«дальше»</strong>, если нужно продолжить (например, добавить общую экологию, эволюцию или дополнительные разделы зоологии).</p>
+    </div>
+
+</div>
+
+</body>
+</html>
